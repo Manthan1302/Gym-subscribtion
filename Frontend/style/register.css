@@ -49,13 +49,22 @@ body{
 
    
 }
+.textbox-f{
+    width: 200px;
+    height: 35px;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid #9DB3BB;
+   
+}
 .login{
     font-size: 20px;
     margin-left: 105px;
 }
 .forPass{
-    /* margin-top: -px; */
-    margin-left: 225px;
+   
+    margin-left: 150px;
     color: gray;
 }
 .forPass:hover{
