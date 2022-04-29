@@ -363,6 +363,10 @@ membership-passes
   font-weight: bold;
 }
 
+.membership .membership-container .bg-img-2 .line4{
+  font-size: 20px;
+}
+
 .membership .membership-container .membership-container-card .border {
   border: 3px solid black;
   width: 24vw;
@@ -388,7 +392,11 @@ membership-passes
 }
 
 .membership .membership-container .membership-container-card .line2 {
-  /* text-align: center; */
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 .membership .membership-container .membership-container-card .line2 label {
@@ -412,9 +420,9 @@ membership-passes
 }
 
 .membership .membership-container .membership-container-card .line3 span {
-  font-size: 35px;
-  font-weight: normal;
-  color: black;
+  font-size: 38px;
+  font-weight: bolder;
+  color: #066163;
 }
 
 .membership .membership-container .membership-container-card .line4 {
@@ -433,7 +441,7 @@ membership-passes
 }
 
 .membership .membership-container .membership-container-card .line4 section p {
-  font-size: 18px;
+  font-size: 20px;
   font-family: "Titillium Web", sans-serif;
   font-weight: bold;
   margin-left: 7%;
@@ -442,9 +450,9 @@ membership-passes
 .membership .membership-container .membership-container-card .line4 section i {
   color: #247881;
 }
-
+/* 
 .membership .membership-container .membership-container-card .line5 {
-}
+} */
 
 .membership .membership-container .membership-container-card .line5 label {
   /* font-family: "Quicksand", sans-serif; */
@@ -522,9 +530,9 @@ membership-passes
   justify-content: space-around;
   align-items: center;
 }
-
+/* 
 .gym-owner .gym-img {
-}
+} */
 
 .gym-owner .gym-img img {
   height: 90vh;
