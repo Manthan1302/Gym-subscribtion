@@ -1,0 +1,587 @@
+/* font-links */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Titillium+Web:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+/* 
+ ===== font-family-used =====
+
+font-family: "Titillium Web", sans-serif;
+font-family: "Quicksand", sans-serif;
+font-family: 'PT Sans Narrow', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+
+
+*/
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* 
+
+start-gym-style 
+
+*/
+.start-gym {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* margin-top: 1%; */
+}
+
+.start-gym .start-gym-bg {
+  background: url("../images/anastase-maragos-HyvE5SiKMUs-unsplash.jpg")
+    no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* margin-bottom: 1%; */
+  width: 76vw;
+  margin-left: 15%;
+}
+
+.start-gym .start-gym-body {
+  color: white;
+
+  position: absolute;
+  top: 28%;
+  left: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 90vw;
+}
+
+.start-gym .start-gym-body .start-gym-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.start-gym .start-gym-body .start-gym-nav .name {
+  font-size: 38px;
+  font-family: "Quicksand", sans-serif;
+  margin-bottom: 8%;
+}
+
+.start-gym .start-gym-body .start-gym-nav .li {
+  margin-top: 8%;
+
+  font-size: 23px;
+  font-family: "Titillium Web", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+
+.start-gym .start-gym-body .start-gym-nav .li:hover {
+  border-bottom: 3px solid white;
+  transform: translateX(20px);
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.start-gym .start-gym-body .start-gym-content {
+  background-color: rgba(255, 255, 255, 0.5);
+
+  margin-top: 5%;
+
+  height: 35vh;
+  width: 50vw;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.start-gym .start-gym-body .start-gym-content .line1 {
+  font-size: 55px;
+  color: black;
+  letter-spacing: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+}
+
+.start-gym .start-gym-body .start-gym-content .line2 {
+  word-spacing: 5px;
+  color: black;
+  font-weight: bold;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 35px;
+}
+
+.start-gym .start-gym-body .start-gym-content form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.start-gym .start-gym-body .start-gym-content form input {
+  height: 6vh;
+  width: 30vw;
+  font-size: 25px;
+
+  font-family: "Josefin Sans", sans-serif;
+
+  outline: none;
+  border: none;
+}
+
+.start-gym .start-gym-body .start-gym-content form button {
+  height: 7vh;
+  width: 10vw;
+  font-size: 17px;
+
+  color: black;
+  font-weight: bold;
+  border: 3px solid black;
+  background-color: white;
+  font-family: "Quicksand", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+.start-gym .start-gym-body .start-gym-content form button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  transition: 0.6s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+
+/* 
+
+how-works
+
+*/
+.how-works {
+  height: 105vh;
+  width: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.how-works .how-works-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.how-works .how-works-container .how-works-title {
+  text-align: center;
+}
+
+.how-works .how-works-container .how-works-title label {
+  font-family: "Quicksand", sans-serif;
+  font-size: 45px;
+  color: black;
+}
+
+.how-works .how-works-container .how-works-title p {
+  font-size: 25px;
+  font-family: "Quicksand", sans-serif;
+  color: black;
+}
+
+.how-works .how-works-cards {
+  display: flex;
+  justify-content: space-around;
+  /* background-color: aqua; */
+  width: 97vw;
+}
+
+.how-works .how-works-card {
+  margin-top: 2%;
+  background-color: black;
+  width: 30vw;
+  height: 35vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border-radius: 10px;
+}
+
+.how-works .how-works-card .how-works-card-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  /* background-color: aqua; */
+  width: 23vw;
+  height: 30vh;
+}
+
+.how-works .how-works-card .how-works-card-body i {
+  color: white;
+  font-size: 45px;
+}
+
+.how-works .how-works-card .caps {
+  font-size: 25px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+}
+
+.how-works .how-works-card .small {
+  font-size: 20px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+}
+
+/* button */
+.how-works .how-works-container .how-works-button {
+  /* background-color: aqua; */
+  margin-top: 5%;
+}
+
+.how-works .how-works-container .how-works-button button {
+  height: 7vh;
+  width: 15vw;
+  font-size: 17px;
+
+  color: black;
+  font-weight: bold;
+  border: 3px solid black;
+  background-color: white;
+  font-family: "Quicksand", sans-serif;
+}
+
+.how-works .how-works-container .how-works-button button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  transition: 0.6s ease-in-out;
+  transform: scale(1.1, 1.1);
+}
+
+/* 
+
+membership-passes
+
+*/
+
+.membership {
+  background-color: black;
+  width: 100%;
+  height: 160vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.membership .title {
+  font-size: 55px;
+  color: white;
+  letter-spacing: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+
+  margin-bottom: -12%;
+  margin-top: -5%;
+}
+
+.membership .membership-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 97vw;
+}
+
+.membership .membership-container .membership-container-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 115vh;
+  width: 27vw;
+  color: white;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* padding-left: 4%; */
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0px 8px 12px 8px grey;
+  border: 1px solid grey;
+  z-index: 1;
+}
+
+.membership .membership-container .bg-img-1 {
+  background-image: url("../images/anastase-maragos-ehQimz6-1qM-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+
+  border-radius: 10px;
+}
+
+.membership .membership-container .bg-img-2 {
+  background-image: url("../images/matthew-sichkaruk-saHd7qc-AMk-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+
+  border-radius: 10px;
+  color: white;
+}
+
+.membership .membership-container .bg-img-3 {
+  background-image: url("../images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+
+  border-radius: 10px;
+}
+
+.membership .membership-container .bg-img-2 .line1,
+.membership .membership-container .bg-img-2 .line2,
+.membership .membership-container .bg-img-2 .line3,
+.membership .membership-container .bg-img-2 .line4,
+.membership .membership-container .bg-img-2 .line5,
+.membership .membership-container .bg-img-2 .line6,
+.membership .membership-container .bg-img-2 .line6 p {
+  color: black;
+  font-weight: bold;
+}
+
+.membership .membership-container .bg-img-2 .line4{
+  font-size: 20px;
+}
+
+.membership .membership-container .membership-container-card .border {
+  border: 3px solid black;
+  width: 24vw;
+}
+
+.membership .membership-container .membership-container-card .line1 {
+  margin-top: 7%;
+  margin-bottom: 10%;
+}
+
+.membership .membership-container .membership-container-card .line1 div {
+  width: 5vw;
+  height: 10vh;
+  background-color: black;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  color: white;
+
+  border-radius: 100%;
+}
+
+.membership .membership-container .membership-container-card .line2 {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.membership .membership-container .membership-container-card .line2 label {
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.membership .membership-container .membership-container-card .line2 p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+}
+
+.membership .membership-container .membership-container-card .line3 {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+
+  color: black;
+}
+
+.membership .membership-container .membership-container-card .line3 span {
+  font-size: 38px;
+  font-weight: bolder;
+  color: #066163;
+}
+
+.membership .membership-container .membership-container-card .line4 {
+  display: flex;
+  align-items: flex-start;
+
+  flex-direction: column;
+  /* background-color: aqua; */
+}
+
+.membership .membership-container .membership-container-card .line4 section {
+  display: flex;
+  align-items: center;
+  /* background-color: aqua; */
+  width: 25vw;
+}
+
+.membership .membership-container .membership-container-card .line4 section p {
+  font-size: 20px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+  margin-left: 7%;
+}
+
+.membership .membership-container .membership-container-card .line4 section i {
+  color: #247881;
+}
+/* 
+.membership .membership-container .membership-container-card .line5 {
+} */
+
+.membership .membership-container .membership-container-card .line5 label {
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.membership .membership-container .membership-container-card .line5 p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.membership .membership-container .membership-container-card .line6 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.membership .membership-container .membership-container-card .line6 button {
+  height: 7vh;
+  width: 25vw;
+  font-size: 17px;
+
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  font-family: "Quicksand", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+
+.membership
+  .membership-container
+  .membership-container-card
+  .line6
+  button:hover {
+  transition: 0.6s ease-in-out;
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+
+.membership .membership-container .membership-container-card i {
+  color: white;
+  font-size: 40px;
+}
+
+.gym-owner {
+  /* background-color: white; */
+
+  background: url("../images/risen-wang-20jX9b35r_M-unsplash.jpg") no-repeat
+    center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+
+  width: 100%;
+  height: 110vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gym-owner .gym-content {
+  background-color: rgba(255, 255, 255, 0.5);
+  /* width: 90vw; */
+  height: 95vh;
+  width: 70vw;
+
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/* 
+.gym-owner .gym-img {
+} */
+
+.gym-owner .gym-img img {
+  height: 90vh;
+  width: 30vw;
+}
+
+.gym-owner .gym-body {
+  color: black;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gym-owner .gym-body h1 {
+  font-size: 55px;
+  color: black;
+  letter-spacing: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+}
+
+.gym-owner .gym-body p {
+  word-spacing: 5px;
+  color: black;
+  font-weight: bold;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 25px;
+}
+
+.gym-owner .gym-body button {
+  height: 7vh;
+  width: 15vw;
+  font-size: 17px;
+
+  color: black;
+  font-weight: bold;
+  border: 3px solid black;
+  background-color: white;
+  font-family: "Quicksand", sans-serif;
+
+  transition: 0.3s ease-in-out;
+}
+
+.gym-owner .gym-body button:hover {
+  transition: 0.6s ease-in-out;
+  background-color: black;
+  color: white;
+  border: 3px solid white;
+  transform: scaleX(1.1);
+}
