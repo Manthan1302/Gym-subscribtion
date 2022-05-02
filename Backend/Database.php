@@ -3,7 +3,7 @@
     // creating database
     $host = "localhost";
     $user = "root";
-    $pass = "rohit1979";
+    $pass = "";
 
     $server = mysqli_connect($host , $user , $pass);
     
@@ -17,10 +17,12 @@
         echo " database already exist";
     }
 
+
     // // creating tables
     // $dbname = "gyms";
 
     // $connect = mysqli_connect($host,)
+
 
 
 
