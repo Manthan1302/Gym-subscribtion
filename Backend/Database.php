@@ -22,7 +22,7 @@
     $connection = mysqli_connect($host,$user,$pass,$dbname);
 
     // User table
-    $userTableQuery = "create table user( id int primary key , firstname varchar(50) , lastname varchar(50) , email varchar(50) , postcode varchar(10) ,password varchar(20) )";
+    $userTableQuery = "create table user( userId int primary key , firstname varchar(50) , lastname varchar(50) , email varchar(50) , postcode varchar(10) ,password varchar(20) )";
 
     $userTable = mysqli_query($connection , $userTableQuery);
     
@@ -42,5 +42,4 @@
     }else{
         echo "<br> gym table exist";
     }
-
 ?>
