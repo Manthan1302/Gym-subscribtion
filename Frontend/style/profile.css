@@ -1,3 +1,17 @@
+/* font-links */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Titillium+Web:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+/* 
+ ===== font-family-used =====
+
+font-family: "Titillium Web", sans-serif;
+font-family: "Quicksand", sans-serif;
+font-family: 'PT Sans Narrow', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+
+
+*/
 body{
     padding: 0;
     margin: 0;
@@ -13,9 +27,7 @@ body{
   display: flex;
 
 
-  background: #232526;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: black;
 
 }
 
@@ -25,27 +37,60 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
     height: 50vh;
 
     margin-top: 10%;
-    margin-left: 1%;
+    margin-left: 2%;
 
     position: fixed;
+    font-family: "Titillium Web", sans-serif;
+    color: black;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 25px white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-container .home-nav label{
+    font-size: 40px;
+
+}
+
+.profile-container .home-nav button{
+    height: 5vh;
+    width: 7vw;
+    font-size: 15px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+
+    border-radius: 5px;
+}
+
+.profile-container .home-nav p{
+    font-size: 20px;
+    letter-spacing: 5px;
 }
 
 .profile-container .profile-body{
 
-    margin-left: 25%;
+    margin-left: 27%;
 
     margin-top: 5%;
+    
 }
 
 
 .profile-container .profile-body .user-profile{     
     height: 20vh;
-    width: 50vw;
+    width: 70vw;
     display: flex;
 }
 
 .profile-container .profile-body .user-profile .user-icon{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: black;
 
     height: 17vh;
     width: 10vw;
@@ -55,6 +100,10 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
     align-items: center;
 
     border-radius: 8px;
+    box-shadow: 0px 0px 25px white;
+    border: 2px solid white;
+
+
 }
 
 .profile-body .user-profile .user-icon i{
@@ -69,9 +118,75 @@ background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, F
     align-items: center;
 }
 
+.profile-body .user-profile .user-details{
+    /* background-color: rgba(255, 255, 255, 0.5); */
+background-color: black;
+    height: 17vh;
+    width: 54vw;
+    font-size: 20px;
+    margin-left: 4%;
 
-.profile-container .profile-body .user-pass{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius:5px ;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    border: 2px solid white;
+
+    box-shadow: 0px 0px 25px white;
+}
+
+.profile-body .user-profile .user-details button{
+    height: 5vh;
+    width: 7vw;
+    font-size: 15px;
+    border: 2px solid white;
     background-color: white;
+    color: black;
+
+    border-radius: 5px;
+}
+
+.profile-container .profile-body .gym{
+    color: black;
+    background-color: white;
+    width: 67vw;
+    font-family: 'Josefin Sans', sans-serif;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+}
 
 
+.profile-container .profile-body .user-pass .pass{
+    background-color: white;
+    width: 66.7vw;
+
+    color: white;
+    background-color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+
+    border: 2px solid white;
+    margin-top: 1%;
+    margin-right: 1%;
+
+    font-family: "Quicksand", sans-serif;
+}
+
+.profile-container .profile-body .user-pass .pass p{
+    /* background-color: aqua; */
+
+    width: 12vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

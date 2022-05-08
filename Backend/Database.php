@@ -127,4 +127,12 @@
     echo "<br /> subscription table fk not updated!";
     }
 
+
+    //  database variables
+    $USER = $userTable;
+    $FEEDBACK = $feedbackTableCreated2;
+    $REVIEW = $reviewTableCreated2;
+    $SUBSCRIPTION = $subscriptionTableCreated3;
+    $GYM = $gymTable;
+
 ?>
