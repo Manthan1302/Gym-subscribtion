@@ -29,6 +29,9 @@ body{
     justify-content:flex-end;
     margin-right:75px;
 }
+
+
+
 .nav-button{
     padding:5px;
     background-color:transparent;
@@ -91,6 +94,8 @@ body{
     background-color: #2A2D36;
     color: #9DB3BB;
     padding: 20px;
+
+    margin-top: 10%;
 }
 .footer-left{
     flex:33.33%;

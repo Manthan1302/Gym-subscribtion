@@ -1,3 +1,19 @@
+<?php
+
+session_start();
+
+if(empty($_SESSION['userid'])){
+
+    header("Location:login.php");
+
+}
+
+$uid = $_SESSION['userid'];
+$fname = $_SESSION['firstname'];
+$lname = $_SESSION['lastname'];
+$email = $_SESSION['email'];
+
+?>
 <html>
 
 <head>
@@ -8,11 +24,15 @@
 <body>
     <div class="profile-container">
         <div class="home-nav">
-            <label>Company_Name</label>
+            <label>
+                <a href="home.php">Company_Name</a>
+            </label>
             <p>About us</p>
             <p>Membership pass</p>
             <p>View Gyms</p>
-            <button>Log out</button>
+            <form method="post">
+            <button name="logout">Log out</button>
+            <form>
         </div>
         <div class="profile-body">
 
@@ -21,9 +41,13 @@
                     <i class="fa-solid fa-user-gear"></i>
                 </div>
                 <div class="user-details">
-                    <p>first name</p>
-                    <p>last name</p>
-                    <p>email</p>
+                    <?php
+
+                    echo "<p> $uid </p>";
+                    echo "<p> $fname $lname </p>";
+                    echo "<p> $email </p>";
+
+                    ?>
                     <button>edit</button>
                 </div>
             </div>
@@ -67,3 +91,12 @@
 <script src="https://kit.fontawesome.com/4384453e56.js" crossorigin="anonymous"></script>
 
 </html>
+
+<?php
+            
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("Location:home.php");
+    }
+            
+?>

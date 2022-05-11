@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+
+if(!empty($_SESSION['userid'])){
+    header("Location:profile.php");
+}
+
+?>
+
 <html>
 
 <head>
@@ -6,8 +16,8 @@
 <body>
 <div class="nav">
     <div class="nav-left">Gyms</div>
-    <div class="nav-right"><button class="nav-button">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="nav-button">Register</button> </div>
+    <div class="nav-right">
+        <button class="nav-button"><a href="register.php">Register</a> </button> </div>
 </div> 
 
 <div>

@@ -3,7 +3,7 @@
     // creating database
     $host = "localhost";
     $user = "root";
-    $pass = "";
+    $pass = "rohit1979";
 
     $server = mysqli_connect($host , $user , $pass);
     
@@ -50,7 +50,7 @@
 
 
     //feedback fk updated
-    $feedFk= "ALTER TABLE `feedback` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT";
+    $feedFk= "ALTER TABLE `feedback` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
 
    $feedbackTableCreated2 = mysqli_query($connection , $feedFk);
 
@@ -73,7 +73,7 @@
     }
 
     // review table fk updated
-    $reviewFk= "ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT";
+    $reviewFk= "ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
 
    $reviewTableCreated2 = mysqli_query($connection , $reviewFk);
 
@@ -106,7 +106,7 @@
     }
 
     // user fk updated
-    $subFk= "ALTER TABLE `pass` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT";
+    $subFk= "ALTER TABLE `pass` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
 
     $subscriptionTableCreated2 = mysqli_query($connection , $subFk);
 

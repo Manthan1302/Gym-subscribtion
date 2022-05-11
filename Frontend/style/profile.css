@@ -74,6 +74,11 @@ body{
     letter-spacing: 5px;
 }
 
+.profile-container .home-nav label a{
+    text-decoration: none;
+    color: black;
+}
+
 .profile-container .profile-body{
 
     margin-left: 27%;
@@ -147,7 +152,16 @@ background-color: black;
     color: black;
 
     border-radius: 5px;
+    cursor: pointer;
 }
+
+.profile-body .user-profile .user-details button:active {
+    transform: scale(0.9);
+  }
+  
+.profile-body .user-profile .user-details button:focus {
+    outline: 0;
+  }
 
 .profile-container .profile-body .gym{
     color: black;
