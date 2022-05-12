@@ -17,7 +17,7 @@ if(!empty($_SESSION['userid'])){
 <div class="nav">
     <div class="nav-left">Gyms</div>
     <div class="nav-right">
-        <a href="register.php"><button class="nav-button">Register </button></a> </div>
+        <button class="nav-button"><a href="register.php">Register</a> </button> </div>
 </div> 
 
 <div>
