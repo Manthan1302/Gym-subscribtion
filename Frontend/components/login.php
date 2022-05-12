@@ -2,8 +2,22 @@
 
 session_start();
 
-if(!empty($_SESSION['userid'])){
-    header("Location:profile.php");
+
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "gym_database";
+
+$connection = mysqli_connect($host,$user,$pass,$dbname);
+
+if($connection){
+    echo '<script>';
+    echo 'console.log(" database connection established")';
+    echo '</script>';
+}else{
+    echo '<script>';
+    echo 'console.log(" something went wrong in db connection")';
+    echo '</script>';
 }
 
 ?>
@@ -17,7 +31,7 @@ if(!empty($_SESSION['userid'])){
 <div class="nav">
     <div class="nav-left">Gyms</div>
     <div class="nav-right">
-        <button class="nav-button"><a href="register.php">Register</a> </button> </div>
+        <a href="register.php"><button class="nav-button">Register</button> </a> </div>
 </div> 
 
 <div>
@@ -27,11 +41,11 @@ if(!empty($_SESSION['userid'])){
             <h2>Log In</h2><br>
         </div>
             <div class="form"><h2>Log In with your email</h2>
-            <form>
+            <form method="post">
                 <input type="text" name="email" placeholder="Email" class="textbox"><br><br>
                 <input type="text" name="password" placeholder="Password" class="textbox">
                 <p class="forPass">Forgotten your password?</p><br><br>
-                <button class="login-btn" >Log In</button>
+                <button class="login-btn" name="login">Log In</button>
             </form>
             </div>
     </div>

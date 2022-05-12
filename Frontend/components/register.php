@@ -4,7 +4,7 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$pass = "rohit1979";
+$pass = "";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -19,7 +19,7 @@ if($connection){
     echo '</script>';
 }
 
-?>
+?> 
 
 <html>
     <head>
@@ -30,7 +30,7 @@ if($connection){
 <body>
     <div class="nav">
         <div class="nav-left">Gyms</div>
-        <div class="nav-right"><button class="nav-button"><a href="login.php"> Login </a></button></div>
+        <div class="nav-right"><a href="login.php"> <button class="nav-button">Login </button></a></div>
     </div> 
     <br>
     <div class="login">
@@ -140,5 +140,4 @@ if(isset($_POST['register'])){
     }
 
 }
-
-?>
+?> 
