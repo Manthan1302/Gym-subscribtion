@@ -80,6 +80,11 @@ start-gym-style
   transition: 0.3s ease-in-out;
 }
 
+.start-gym .start-gym-body .start-gym-nav a {
+  text-decoration: none;
+  color: white;
+}
+
 .start-gym .start-gym-body .start-gym-nav .li:hover {
   border-bottom: 3px solid white;
   transform: translateX(20px);

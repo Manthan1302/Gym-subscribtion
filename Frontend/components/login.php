@@ -1,7 +1,13 @@
-
 <?php
+
 session_start();
+
+if(!empty($_SESSION['userid'])){
+    header("Location:profile.php");
+}
+
 ?>
+
 <html>
 
 <head>
@@ -10,8 +16,8 @@ session_start();
 <body>
 <div class="nav">
     <div class="nav-left">Gyms</div>
-    <div class="nav-right"><button class="nav-button">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="nav-button">Register</button> </div>
+    <div class="nav-right">
+        <a href="register.php"><button class="nav-button">Register </button></a> </div>
 </div> 
 
 <div>
@@ -21,11 +27,11 @@ session_start();
             <h2>Log In</h2><br>
         </div>
             <div class="form"><h2>Log In with your email</h2>
-            <form method = "post">
+            <form>
                 <input type="text" name="email" placeholder="Email" class="textbox"><br><br>
                 <input type="text" name="password" placeholder="Password" class="textbox">
                 <p class="forPass">Forgotten your password?</p><br><br>
-                <input type=submit class="login-btn" name = 'login' value='Log In'></input>
+                <button class="login-btn" >Log In</button>
             </form>
             </div>
     </div>
@@ -55,59 +61,3 @@ session_start();
 
     </div>
 </html>
-<?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "gym_database";
-$connection = mysqli_connect($host,$user,$pass,$dbname);
-
-
-    if(isset($_POST['login'])){
-        $email = $_POST['email'];
-        $pass = $_POST['password'];
-
-
-        if (empty($email) && empty($pass)){
-            echo "<script>";
-            echo " alert('we got no information from your side!') ";
-            echo "</script>";
-        }
-        
-
-        if (empty($email) || empty($pass)){
-            echo "<script>";
-            echo " alert(' every details is mandatory ') ";
-            echo "</script>";
-        }
-
-        if (!empty($email) && !empty($pass)){
-            if (!preg_match("/^[A-za-z0-9]+@[A-Za-z]+\.[A-Za-z]{2,6}$/",$email)) {
-                echo "invalid email Id!! <br>";
-            }
-
-            if (!preg_match("/^[0-9]+$/",$pass)) {
-                echo "invalid password! <br>";
-            }
-                
-            }else{
-                
-                echo "<script>";
-                echo " alert(' invalid details ') ";
-                echo "</script>";
-
-            }
-        }
-
-    if(!empty($email) && !empty($pass)){
-        $query = "select * from user where email = $email";
-        $result = mysqli_query($connection,$query);
-        header("Location:home.html");
-        $_SESSION['email'] = $email;
-        $_SESSION['pass'] = $pass;
-    }
-    else{
-        echo "something went wrong";
-    }
-
-?>

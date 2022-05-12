@@ -29,6 +29,9 @@ body{
     justify-content:flex-end;
     margin-right:75px;
 }
+
+
+
 .nav-button{
     padding:5px;
     background-color:transparent;
@@ -38,12 +41,23 @@ body{
     outline: none;
     border: 2px solid black;
     transition: 0.6s ease-in-out;
-  transform: scale(1.1, 1.1);
-  font-family: "Quicksand", sans-serif;
+    transform: scale(1.1, 1.1);
+    font-family: "Quicksand", sans-serif;
+    
+}
+.nav-button a {
+    color: black;
+    text-decoration: none;
 }
 .nav-button:hover{
     background-color:black;
     color:white;
+    
+}
+.nav-button a:hover{
+    background-color:black;
+    color:white;
+    text-decoration: none;
 }
 .form{
     text-align: center;
@@ -91,6 +105,8 @@ body{
     background-color: #2A2D36;
     color: #9DB3BB;
     padding: 20px;
+
+    margin-top: 10%;
 }
 .footer-left{
     flex:33.33%;

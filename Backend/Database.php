@@ -4,6 +4,7 @@
     $host = "localhost";
     $user = "root";
     $pass = "";
+
     $server = mysqli_connect($host , $user , $pass);
     
     $dbquery ="create database gym_database";
@@ -23,8 +24,7 @@
 
     // User table
 
-    $userTableQuery = "create table user( id int primary key , firstname varchar(50) , lastname varchar(50) , email varchar(50) , postcode varchar(10) ,password varchar(20) )";
-
+    $userTableQuery = "create table user( userId int primary key , firstname varchar(50) , lastname varchar(50) , email varchar(50) , postcode varchar(10) ,password varchar(20) )";
 
     $userTable = mysqli_query($connection , $userTableQuery);
     
@@ -48,10 +48,11 @@
     // }
 
 
-    //foreign key updated
-    $feedFk= "ALTER TABLE `feedback` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT";
+    //feedback fk updated
+    $feedFk= "ALTER TABLE `feedback` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
 
    $feedbackTableCreated2 = mysqli_query($connection , $feedFk);
+
 
 //    if($feedbackTableCreated2){
 //     echo "<br /> feedback table fk updated";
@@ -73,8 +74,6 @@
     // }
 
     // subscription pass table
-
-
     $subscription = "create table pass( passId int primary key , passName varchar(20) , passDiscription varchar(50), passPrice int, passType varchar(100) , user_id int , gym_id int )";
 
     $subTable = mysqli_query($connection , $subscription);
@@ -86,7 +85,7 @@
     // }
 
     // user fk updated
-    $subFk= "ALTER TABLE `pass` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT";
+    $subFk= "ALTER TABLE `pass` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
 
     $subscriptionTableCreated2 = mysqli_query($connection , $subFk);
 
@@ -106,5 +105,13 @@
 //     }else{
 //     echo "<br /> subscription table fk not updated!";
 //     }
+
+
+    //  database variables
+    $USER = $userTable;
+    $FEEDBACK = $feedbackTableCreated2;
+    $REVIEW = $reviewTableCreated2;
+    $SUBSCRIPTION = $subscriptionTableCreated3;
+    $GYM = $gymTable;
 
 ?>

@@ -7,8 +7,8 @@
 <body>
 <div class="nav">
     <div class="nav-left">Gyms</div>
-    <div class="nav-right"><button class="nav-button">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="nav-button">Register</button> </div>
+    <div class="nav-right"><a href="login.php"><button class="nav-button">Login</button></a>
+    </div>
 </div> 
 <br>
 <div class="login">

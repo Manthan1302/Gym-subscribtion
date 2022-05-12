@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+
+?>
 <!DOCTYPE html>
 
 <head>
@@ -17,11 +22,9 @@
             <div class="start-gym-body">
                 <div class="start-gym-nav">
                     <span class="name">Company_Name</span>
-
                     <span class="li">About us</span>
                     <span class="li">Membership pass</span>
-                    <span class="li">Login</span>
-                    <span class="li">Register</span>
+                    <span class="li"><a href="login.php"> Profile</a></span>
                 </div>
 
                 <div class="start-gym-content">
