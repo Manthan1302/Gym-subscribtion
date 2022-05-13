@@ -20,7 +20,7 @@
    
     <div class="search">
        <div class="text"> 
-        <input type="text" placeholder="Enter area" class="input"> 
+        <input type="text" placeholder="Enter location or post code" class="input"> 
         <i class="fa-regular fa-circle-xmark cross"></i>    
     </div>&nbsp;&nbsp;&nbsp;  
     <button class="nav-button" style="background-color: black;color: white; margin-top: 8px;"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
@@ -31,122 +31,154 @@
 <br>
 <br>
 
-<div class="gyms"> 
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
+<!-- gyms -->
+<div class="gym-container">
+            <div class="gyms">
+                <div class="card">
+                    <img src="../images/sfw.jpg" height="400px" width="350pc">
+
+                    <p>SFW GYM</p>
+                    <div class="points">
+                        <ul type="bullet">
+                            <li>Free Weights</li>
+                            <li>Group exercise</li>
+                            <li>Changing Rooms</li>
+                            <li>Lockers</li>
+                            <li>Showers</li>
+                            <li>Fitness studio</li>
+                            <li>Resistance machines</li>
+                        </ul>
+                    </div>
+                    <div class="pass-button">
+                        <section>
+                            <p>One Visit To Gym</p>
+                            <button class="gyms-button"> Day Pass<br>500</button>
+                        </section>
+                        <section>
+                            <p>Access Multiple Gyms</p>
+                            <Button class="gyms-button">Monthly+<br>5000</Button>
+                        </section>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <img src="../images/sfw.jpg" height="400px" width="350pc">
+
+                    <p>SFW GYM</p>
+                    <div class="points">
+                        <ul type="bullet">
+                            <li>Free Weights</li>
+                            <li>Group exercise</li>
+                            <li>Changing Rooms</li>
+                            <li>Lockers</li>
+                            <li>Showers</li>
+                            <li>Fitness studio</li>
+                            <li>Resistance machines</li>
+                        </ul>
+                    </div>
+                    <div class="pass-button">
+                        <section>
+                            <p>One Visit To Gym</p>
+                            <button class="gyms-button"> Day Pass<br>500</button>
+                        </section>
+                        <section>
+                            <p>Access Multiple Gyms</p>
+                            <Button class="gyms-button">Monthly+<br>5000</Button>
+                        </section>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <img src="../images/sfw.jpg" height="400px" width="350pc">
+
+                    <p>SFW GYM</p>
+                    <div class="points">
+                        <ul type="bullet">
+                            <li>Free Weights</li>
+                            <li>Group exercise</li>
+                            <li>Changing Rooms</li>
+                            <li>Lockers</li>
+                            <li>Showers</li>
+                            <li>Fitness studio</li>
+                            <li>Resistance machines</li>
+                        </ul>
+                    </div>
+                    <div class="pass-button">
+                        <section>
+                            <p>One Visit To Gym</p>
+                            <button class="gyms-button"> Day Pass<br>500</button>
+                        </section>
+                        <section>
+                            <p>Access Multiple Gyms</p>
+                            <Button class="gyms-button">Monthly+<br>5000</Button>
+                        </section>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <img src="../images/sfw.jpg" height="400px" width="350pc">
+
+                    <p>SFW GYM</p>
+                    <div class="points">
+                        <ul type="bullet">
+                            <li>Free Weights</li>
+                            <li>Group exercise</li>
+                            <li>Changing Rooms</li>
+                            <li>Lockers</li>
+                            <li>Showers</li>
+                            <li>Fitness studio</li>
+                            <li>Resistance machines</li>
+                        </ul>
+                    </div>
+                    <div class="pass-button">
+                        <section>
+                            <p>One Visit To Gym</p>
+                            <button class="gyms-button"> Day Pass<br>500</button>
+                        </section>
+                        <section>
+                            <p>Access Multiple Gyms</p>
+                            <Button class="gyms-button">Monthly+<br>5000</Button>
+                        </section>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <img src="../images/sfw.jpg" height="400px" width="350pc">
+
+                    <p>SFW GYM</p>
+                    <div class="points">
+                        <ul type="bullet">
+                            <li>Free Weights</li>
+                            <li>Group exercise</li>
+                            <li>Changing Rooms</li>
+                            <li>Lockers</li>
+                            <li>Showers</li>
+                            <li>Fitness studio</li>
+                            <li>Resistance machines</li>
+                        </ul>
+                    </div>
+                    <div class="pass-button">
+                        <section>
+                            <p>One Visit To Gym</p>
+                            <button class="gyms-button"> Day Pass<br>500</button>
+                        </section>
+                        <section>
+                            <p>Access Multiple Gyms</p>
+                            <Button class="gyms-button">Monthly+<br>5000</Button>
+                        </section>
+                    </div>
+
+                </div>
+            </div>
 
 
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
+        </div>
 
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-</div>
+<!-- foooter -->
 <div class="footer">
     <div class="footer-left">
         <div>Gym passes</div>

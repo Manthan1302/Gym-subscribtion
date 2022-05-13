@@ -24,6 +24,7 @@ session_start();
                     <span class="name">Company_Name</span>
                     <span class="li">About us</span>
                     <span class="li">Membership pass</span>
+                    <span class="li">View Gyms</span>
                     <span class="li"><a href="login.php"> Profile</a></span>
                 </div>
 
@@ -31,7 +32,7 @@ session_start();
                     <span class="line1">One Network</span>
                     <span class="line2">Any location. Thousands of gyms. Zero contracts.</span>
                     <form>
-                        <input type="text" />
+                        <input type="text" placeholder="enter location or postcode" />
                         <button>Find Gyms</button>
                     </form>
                 </div>

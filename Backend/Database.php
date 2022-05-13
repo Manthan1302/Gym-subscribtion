@@ -84,7 +84,7 @@
     }
 
     //  gym table
-    $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymAddress varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";
+    $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";
 
     $gymTable = mysqli_query($connection , $gymTableQuery);
 
