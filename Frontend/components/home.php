@@ -72,7 +72,10 @@ session_start();
 
             </div>
             <div class="how-works-button">
+                
                 <button>Explore our Passes</button>
+               
+
             </div>
         </div>
     </div>

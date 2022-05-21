@@ -3,7 +3,7 @@
     // creating database
     $host = "localhost";
     $user = "root";
-    $pass = "rohit1979";
+    $pass = "";
 
     $server = mysqli_connect($host , $user , $pass);
     
@@ -61,27 +61,7 @@
     }
 
 
-    // review table
-    $reviewTableQuery = "create table review(review_id int primary key,review_points float,user_id int )";
-
-    $reviewTableCreated = mysqli_query($connection,$reviewTableQuery);
-
-    if($reviewTableCreated){
-        echo "<br /> review table created";
-    }else{
-        echo "<br /> review table exist!";
-    }
-
-    // review table fk updated
-    $reviewFk= "ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
-
-   $reviewTableCreated2 = mysqli_query($connection , $reviewFk);
-
-   if($reviewTableCreated2){
-    echo "<br /> review table fk updated";
-    }else{
-    echo "<br /> review table fk not updated!";
-    }
+ 
 
     //  gym table
     $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymAddress varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";

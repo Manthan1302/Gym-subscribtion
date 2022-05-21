@@ -8,7 +8,7 @@ if(!empty($_SESSION['userid'])){
 
 $host = "localhost";
 $user = "root";
-$pass = "rohit1979";
+$pass = "";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -102,7 +102,7 @@ if($connection){
                 echo "alert('password should be in numbers')";
                 echo '</script>';
             }else{
-                $search = "select * from user where email = '$email'";
+                $search = "select * from user where email = '$email' and password = '$password' ";
                 $login = mysqli_query($connection , $search);
 
                 while($row = mysqli_fetch_array($login)){
@@ -118,6 +118,10 @@ if($connection){
                 
             }
 
+        }
+
+        if($email == 'admin@gmail.com' && $password=="123456"){
+            header("Location:../admin/adminhome.html");
         }
 
     }
