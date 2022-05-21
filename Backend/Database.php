@@ -61,10 +61,8 @@
     }
 
 
- 
-
     //  gym table
-    $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymAddress varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";
+    $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";
 
     $gymTable = mysqli_query($connection , $gymTableQuery);
 
@@ -75,7 +73,7 @@
     }
 
     // subscription pass table
-    $subscription = "create table pass( passId int primary key , passName varchar(20) , passDiscription varchar(50), passPrice int, passType varchar(100) , user_id int , gym_id int )";
+    $subscription = "create table pass( passId int primary key , passName varchar(20) , passPrice int, passType varchar(100) , user_id int , gym_id int )";
 
     $subTable = mysqli_query($connection , $subscription);
 
@@ -107,12 +105,5 @@
     echo "<br /> subscription table fk not updated!";
     }
 
-
-    //  database variables
-    $USER = $userTable;
-    $FEEDBACK = $feedbackTableCreated2;
-    $REVIEW = $reviewTableCreated2;
-    $SUBSCRIPTION = $subscriptionTableCreated3;
-    $GYM = $gymTable;
 
 ?>

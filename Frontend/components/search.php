@@ -1,3 +1,33 @@
+<?php
+
+session_start();
+
+$host = "localhost";
+$user = "root";
+$pass = "rohit1979";
+$dbname = "gym_database";
+
+$connection = mysqli_connect($host,$user,$pass,$dbname);
+
+if($connection){
+    echo '<script>';
+    echo 'console.log(" database connection established")';
+    echo '</script>';
+}else{
+    echo '<script>';
+    echo 'console.log(" something went wrong in db connection")';
+    echo '</script>';
+}
+
+$query = "select * from gym";
+$search = mysqli_query($connection , $query);
+
+// $location = $_SESSION['location'];
+
+// echo "location = $location";
+
+
+?>
 <html>
 <head>
     
@@ -7,10 +37,14 @@
 </head>
 <body>
 <div class="nav">
-    <div class="nav-left">Gyms</div>
-    <div class="nav-right"><button class="nav-button">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
-        <button class="nav-button">Register</button> </div>
-</div> 
+        <div class="nav-left">
+        <a href="home.php">Gymnastix</a>
+        </div>
+        <div class="nav-right">
+            <p><a href="">About</a></p>
+            <p><a href="profile.php">Profile</a></p>
+        </div>
+    </div>
 
 <div class="main">
     <br>
@@ -19,134 +53,199 @@
     </div>
    
     <div class="search">
-       <div class="text"> 
-        <input type="text" placeholder="Enter area" class="input"> 
-        <i class="fa-regular fa-circle-xmark cross"></i>    
-    </div>&nbsp;&nbsp;&nbsp;  
-    <button class="nav-button" style="background-color: black;color: white; margin-top: 8px;"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-    <div class="map">
-        <button class="nav-button" style="margin-left: 450px;">Maps <i class="fa-regular fa-map"></i></button>
-    </div> 
+        <div class="text"> 
+            <form method="post">
+                <input type="text" name="address" placeholder="Enter your location" class="input">
+                <button name="search" class="nav-button" style="background-color: black;color: white; margin-top: 8px; margin-right: 1%"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            </form>   
+        </div>  
+       
 </div>
 <br>
 <br>
 
-<div class="gyms"> 
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
+<div class="gym-container">
+    <div class="gyms">
+                
+    <?php   
+            
+    
+            if(!isset($_POST['search'])){
+                if(isset($_SESSION['location'])){
+                    $location = $_SESSION['location'];
+                    $query = "select * from gym where gymLocation like '%$location%';";
+                    $search = mysqli_query($connection , $query);
+
+                while($row = mysqli_fetch_array($search)){
+                    $gymid = $row['gymId'];
+                    $gymname = $row['gymName'];
+                    $gymlocation = $row['gymLocation'];
+                    $gymimage = json_decode($row['gymImages']);
+                    $gymamenities = json_decode($row['gymAmenities']);
+                    $gympass = json_decode($row['gymPass']);
+                    // $daypass = $gympass->Daypass;
+                    // $monthpass = $gympass->Monthlypass;
+                    $aboutgym = $row['aboutGym'];
+                    $gymequip = json_decode($row['gymEquipment']);
+    
+                    echo '<div class="card">';
+                        echo "<img src='$gymimage[0]'>";
+                    
+                        echo "<div class='names'>";
+                            echo "<p>$gymname</p>";
+                            echo "<p>$gymlocation</p>";
+                        echo "</div>";
+    
+                        echo '<div class="points">';
+                            echo '<ul type="bullet">';
+                                foreach($gymequip as $equip){
+                                    echo "<li>$equip</li>";
+                                }
+                            echo "</ul>";
+                        echo "</div>";
+                        echo '<div class="pass-button">';   
+                                echo "<section>";
+                                    echo "<button class='gyms-button'><a href='viewgym.php?id=$gymid'>View Passes</a></button>";
+                                echo "</section>";
+                        echo "</div>";
+                    echo "</div>";
+                }
+                }else{
+                    while($row = mysqli_fetch_array($search)){
+                        $gymid = $row['gymId'];
+                        $gymname = $row['gymName'];
+                        $gymlocation = $row['gymLocation'];
+                        $gymimage = json_decode($row['gymImages']);
+                        $gymamenities = json_decode($row['gymAmenities']);
+                        $gympass = json_decode($row['gymPass']);
+                        // $daypass = $gympass->Daypass;
+                        // $monthpass = $gympass->Monthlypass;
+                        $aboutgym = $row['aboutGym'];
+                        $gymequip = json_decode($row['gymEquipment']);
+        
+                        echo '<div class="card">';
+                            echo "<img src='$gymimage[0]'>";
+                        
+                            echo "<div class='names'>";
+                                echo "<p>$gymname</p>";
+                                echo "<p>$gymlocation</p>";
+                            echo "</div>";
+        
+                            echo '<div class="points">';
+                                echo '<ul type="bullet">';
+                                    foreach($gymequip as $equip){
+                                        echo "<li>$equip</li>";
+                                    }
+                                echo "</ul>";
+                            echo "</div>";
+                            echo '<div class="pass-button">';   
+                                    echo "<section>";
+                                        echo "<button class='gyms-button'><a href='viewgym.php?id=$gymid'>View Passes</a></button>";
+                                    echo "</section>";
+                            echo "</div>";
+                        echo "</div>";
+                    }
+                }
+            }
+            else{
+
+                session_destroy();
+
+                $address = $_POST['address'];
+                
+                if(empty($address)){
+                    echo '<script>';
+                    echo "alert('* Address has not been set! *')";
+                    echo '</script>';
+
+                    while($row = mysqli_fetch_array($search)){
+                        $gymid = $row['gymId'];
+                        $gymname = $row['gymName'];
+                        $gymlocation = $row['gymLocation'];
+                        $gymimage = json_decode($row['gymImages']);
+                        $gymamenities = json_decode($row['gymAmenities']);
+                        $gympass = json_decode($row['gymPass']);
+                        // $daypass = $gympass->Daypass;
+                        // $monthpass = $gympass->Monthlypass;
+                        $aboutgym = $row['aboutGym'];
+                        $gymequip = json_decode($row['gymEquipment']);
+        
+                        echo '<div class="card">';
+                            echo "<img src='$gymimage[0]'>";
+                        
+                            echo "<div class='names'>";
+                                echo "<p>$gymname</p>";
+                                echo "<p>$gymlocation</p>";
+                            echo "</div>";
+        
+                            echo '<div class="points">';
+                                echo '<ul type="bullet">';
+                                    foreach($gymequip as $equip){
+                                        echo "<li>$equip</li>";
+                                    }
+                                echo "</ul>";
+                            echo "</div>";
+                            echo '<div class="pass-button">';   
+                                    echo "<section>";
+                                        echo "<button class='gyms-button'><a href='viewgym.php?id=$gymid'>View Passes</a></button>";
+                                    echo "</section>";
+                            echo "</div>";
+                        echo "</div>";
+                    }
+                }
+                
+                else{
+                    $query = "select * from gym where gymLocation like '%$address%';";
+                    $search = mysqli_query($connection , $query);
+
+                    while($row = mysqli_fetch_array($search)){
+                        $gymid = $row['gymId'];
+                        $gymname = $row['gymName'];
+                        $gymlocation = $row['gymLocation'];
+                        $gymimage = json_decode($row['gymImages']);
+                        $gymamenities = json_decode($row['gymAmenities']);
+                        $gympass = json_decode($row['gymPass']);
+                        // $daypass = $gympass->Daypass;
+                        // $monthpass = $gympass->Monthlypass;
+                        $aboutgym = $row['aboutGym'];
+                        $gymequip = json_decode($row['gymEquipment']);
+        
+                        echo '<div class="card">';
+                            echo "<img src='$gymimage[0]'>";
+                        
+                            echo "<div class='names'>";
+                                echo "<p>$gymname</p>";
+                                echo "<p>$gymlocation</p>";
+                            echo "</div>";
+        
+                            echo '<div class="points">';
+                                echo '<ul type="bullet">';
+                                    foreach($gymequip as $equip){
+                                        echo "<li>$equip</li>";
+                                    }
+                                echo "</ul>";
+                            echo "</div>";
+                            echo '<div class="pass-button">';   
+                                    echo "<section>";
+                                        echo "<button class='gyms-button'><a href='viewgym.php?id=$gymid'>View Passes</a></button>";
+                                    echo "</section>";
+                            echo "</div>";
+                        echo "</div>";
+                    }
+
+                }
+            }
 
 
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
+                ?>
+
+                
+            </div>
 
 
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
-    <div class="card"> 
-        <img src="../images/sfw.jpg" height="400px" width="350pc">
-        <br>
-        <br>
-        SFW GYM<br><br>
-        <ul style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-        <span style="margin-left: -30px;">Free Weights</span>&nbsp;
-        <li>Group exercise</li>&nbsp;
-        <li>Changing Rooms</li>
-        <li style="margin-left: -10px;">Lockers</li>
-        <li >Showers</li>
-        <li>Fitness studio</li> 
-        <li>Resistance machines</li>
-    </ul><br><br>
-    <div style="display: flex; justify-content: space-around;"><p>One Visit To Gym</p><p>Access Multiple Gyms</p></div>
-    <div style="display: flex; justify-content: space-around;"><Button class="gyms-button"> Day Pass<br>500</Button><Button class="gyms-button">Monthly+<br>5000</Button></div>
-
-
-    </div>
 </div>
+
+<!-- foooter -->
 <div class="footer">
     <div class="footer-left">
         <div>Gym passes</div>
@@ -167,4 +266,6 @@
     </div>
 
 </div>
+</body>
 </html>
+

@@ -32,7 +32,7 @@ if($connection){
 </head>
 <body>
 <div class="nav">
-    <div class="nav-left">Gyms</div>
+    <div class="nav-left">Gymnastix</div>
     <div class="nav-right">
         <button class="nav-button"><a href="register.php">Register</a> </button> </div>
 </div> 
@@ -50,6 +50,7 @@ if($connection){
                 <p class="forPass">Forgotten your password?</p><br><br>
                 <button class="login-btn" name="login" >Log In</button>
             </form>
+
             </div>
     </div>
        
@@ -78,7 +79,6 @@ if($connection){
     </div>
 </html>
 
-
 <?php
 
     if(isset($_POST['login'])){
@@ -105,15 +105,25 @@ if($connection){
                 $search = "select * from user where email = '$email' and password = '$password' ";
                 $login = mysqli_query($connection , $search);
 
-                while($row = mysqli_fetch_array($login)){
-                    $_SESSION['userid'] = $row['userId'];
-                    $_SESSION['firstname'] = $row['firstname'];
-                    $_SESSION['lastname'] = $row['lastname'];
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['postcode'] = $row['postcode'];
-                    $_SESSION['password'] = $row['password'];               
+                $result = mysqli_num_rows($login);
+
+                if($result > 0){
+                    while($row = mysqli_fetch_array($login)){
+                        $_SESSION['userid'] = $row['userId'];
+                        $_SESSION['firstname'] = $row['firstname'];
+                        $_SESSION['lastname'] = $row['lastname'];
+                        $_SESSION['email'] = $row['email'];
+                        $_SESSION['postcode'] = $row['postcode'];
+                        $_SESSION['password'] = $row['password'];               
+                    }
+                    header("Location:profile.php");
+                }else{
+                    // echo "<p> * The details are wrong , please recheck and enter again </p>";
+                    echo '<script>';
+                    echo "alert('* The details are wrong , please recheck and enter again')";
+                    echo '</script>';
+
                 }
-                header("Location:profile.php");
 
                 
             }

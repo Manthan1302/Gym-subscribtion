@@ -21,18 +21,33 @@ session_start();
             </div>
             <div class="start-gym-body">
                 <div class="start-gym-nav">
-                    <span class="name">Company_Name</span>
+                    <span class="name">Gymnastix</span>
                     <span class="li">About us</span>
                     <span class="li">Membership pass</span>
+                    <span class="li"><a href="search.php">View Gyms</a></span>
                     <span class="li"><a href="login.php"> Profile</a></span>
                 </div>
 
                 <div class="start-gym-content">
                     <span class="line1">One Network</span>
                     <span class="line2">Any location. Thousands of gyms. Zero contracts.</span>
-                    <form>
-                        <input type="text" />
-                        <button>Find Gyms</button>
+                    <form method="post">
+                        <input type="text" placeholder="enter your location" name="location"/>
+                        <button name="press">Find Gyms</button>
+                        <?php
+                            if(isset($_POST['press'])){
+                                $location = $_POST['location'];
+                                if(empty($location)){
+                                    echo '<script>';
+                                    echo "alert('* Address has not been set! *')";
+                                    echo '</script>';
+                                }else{
+                                    $_SESSION['location'] = $location;
+                                    header("Location:search.php");
+                                }
+                            }
+
+                        ?>
                     </form>
                 </div>
             </div>
@@ -71,12 +86,14 @@ session_start();
                 </div>
 
             </div>
+
             <div class="how-works-button">
                 
                 <button>Explore our Passes</button>
                
 
             </div>
+
         </div>
     </div>
     <div class="membership">
@@ -215,10 +232,24 @@ session_start();
             </div>
         </div>
     </div>
-    <div class="faqs">
-
-    </div>
-    <div class="updates">
+    <div class="footer">
+        <div class="footer-left">
+            <div>Gym passes</div>
+            <div>Gyms near me</div>
+            <div>Refer a friend</div>
+            <div>Student Discount</div>
+        </div>
+        <div class="footer-center">
+            <div>Partnerships</div>
+            <div>Partner Portal</div>
+            <div>Careers</div>
+        </div>
+        <div class="footer-right">
+            <div>Blog</div>
+              <div>Terms</div>
+            <div>Privacy Policy</div>
+            <div>FAQs & Contact</div>
+        </div>
 
     </div>
 

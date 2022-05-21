@@ -25,13 +25,12 @@ $email = $_SESSION['email'];
     <div class="profile-container">
         <div class="home-nav">
             <label>
-                <a href="home.php">Company_Name</a>
+                <a href="home.php">Gymnastix</a>
             </label>
-            <p>About us</p>
-            <p>Membership pass</p>
-            <p>View Gyms</p>
+            <p><a href="">About us</a></p>
+            <p><a href="search.php">View Gyms</a></p>
             <form method="post">
-            <button name="logout">Log out</button>
+                <button name="logout">Log out</button>
             <form>
         </div>
         <div class="profile-body">
