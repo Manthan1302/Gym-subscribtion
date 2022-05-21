@@ -60,29 +60,6 @@
     echo "<br /> feedback table fk not updated!";
     }
 
-
-    // review table
-    $reviewTableQuery = "create table review(review_id int primary key,review_points float,user_id int )";
-
-    $reviewTableCreated = mysqli_query($connection,$reviewTableQuery);
-
-    if($reviewTableCreated){
-        echo "<br /> review table created";
-    }else{
-        echo "<br /> review table exist!";
-    }
-
-    // review table fk updated
-    $reviewFk= "ALTER TABLE `review` ADD FOREIGN KEY (`user_id`) REFERENCES `user`(`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT";
-
-   $reviewTableCreated2 = mysqli_query($connection , $reviewFk);
-
-   if($reviewTableCreated2){
-    echo "<br /> review table fk updated";
-    }else{
-    echo "<br /> review table fk not updated!";
-    }
-
     //  gym table
     $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";
 
@@ -95,7 +72,7 @@
     }
 
     // subscription pass table
-    $subscription = "create table pass( passId int primary key , passName varchar(20) , passDiscription varchar(50), passPrice int, passType varchar(100) , user_id int , gym_id int )";
+    $subscription = "create table pass( passId int primary key , passName varchar(20) , passPrice int, passType varchar(100) , user_id int , gym_id int )";
 
     $subTable = mysqli_query($connection , $subscription);
 
@@ -127,12 +104,5 @@
     echo "<br /> subscription table fk not updated!";
     }
 
-
-    //  database variables
-    $USER = $userTable;
-    $FEEDBACK = $feedbackTableCreated2;
-    $REVIEW = $reviewTableCreated2;
-    $SUBSCRIPTION = $subscriptionTableCreated3;
-    $GYM = $gymTable;
 
 ?>
