@@ -67,11 +67,25 @@ body{
     color: white;
 
     border-radius: 5px;
+    cursor: pointer;
 }
+
+.profile-container .home-nav button:focus {
+    outline: 0;
+  }
+
+.profile-container .home-nav button:active {
+    transform: scale(0.9);
+  }
 
 .profile-container .home-nav p{
     font-size: 20px;
     letter-spacing: 5px;
+}
+
+.profile-container .home-nav p a{
+    text-decoration: none;
+    color: black;
 }
 
 .profile-container .home-nav label a{
