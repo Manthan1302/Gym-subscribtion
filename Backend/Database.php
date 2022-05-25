@@ -72,7 +72,7 @@
     }
 
     // subscription pass table
-    $subscription = "create table pass( passId int primary key , passName varchar(20) , passPrice int, passType varchar(100) , user_id int , gym_id int )";
+    $subscription = "create table pass( passId int primary key , passName varchar(20) , passPrice int , passType varchar(100) , user_id int , gym_id int )";
 
     $subTable = mysqli_query($connection , $subscription);
 
