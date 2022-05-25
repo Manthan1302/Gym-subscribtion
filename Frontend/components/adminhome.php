@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <html>
     <head>
         <link rel="stylesheet" href="../style/adminhome.css" type="text/css">
@@ -7,22 +11,26 @@
     <body>
         <div class="admin-nav">
             <div>
-                <h2 style="margin-left: 20px;">Gymasio Dashboard</h2>
+                <a href="#"><h2 style="margin-left: 20px;">Gymasio Dashboard</h2></a>
             </div>
             <div>
-                <i class="fas fa-sign-out-alt" style="font-size: 25px; margin-top:20px;margin-right: 20px;"></i>
+                <form method="post">
+                    <button name="logout" style="background-color: transparent; border: none;">
+                        <i class="fas fa-sign-out-alt" style="font-size: 25px; margin-top:20px;margin-right: 20px;"></i>
+                    </button>
+                </form>
             </div>
         </div>
         <br><br>
         <div class="admin-functions">
-            <a href="users.html"> 
+            <a href="users.php"> 
                 <div class="card">
                     <i class="fas fa-users" style="font-size: 50px; margin-top:55px; "></i>
                     <br><br>
                     <span style="font-size: 20px; ">Users</span>
                 </div>
             </a>
-            <a href="gyms.html">
+            <a href="gyms.php">
                 <div class="card"> 
                     <i class="fas fa-dumbbell" style="font-size: 50px; margin-top:55px;"></i>
                     <br><br> 
@@ -41,7 +49,22 @@
                     <span style="font-size: 20px;"> Subscription pass</span>
                 </div>
             </a>
-            <div class="card"><i class="fas fa-comment-alt" style="font-size: 50px; margin-top:55px;"></i><br><br><span style="font-size: 20px;">Feedback</span></div>
+            <a href="feedback.html">
+                <div class="card">
+                    <i class="fas fa-comment-alt" style="font-size: 50px; margin-top:55px;"></i>
+                    <br><br>
+                    <span style="font-size: 20px;">Feedback</span>
+                </div>
+            </a>
         </div>
     </body>
 </html>
+
+<?php
+            
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header("Location:login.php");
+    }
+            
+?>

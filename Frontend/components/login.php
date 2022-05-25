@@ -131,7 +131,7 @@ if($connection){
         }
 
         if($email == 'admin@gmail.com' && $password=="123456"){
-            header("Location:../admin/adminhome.html");
+            header("Location:adminhome.php");
         }
 
     }
