@@ -110,28 +110,19 @@ while($row = mysqli_fetch_array($result)){
                 foreach($gympass as $type => $pass){
                     // echo "pass = $pass ,";
                     if($type == "Daypass"){
-                        echo '<section class="bronze">';
-                            echo '<i class="fa-solid fa-ticket-simple"></i>';
-                            echo '<p>Day Pass</p>';
-                            echo '<p>Bronze</p>';
-                            echo "<button> &#8377; $pass</button>";
-                        echo '</section>';  
-                    }
-
-                    if($type == "Monthlypass"){
                         echo '<section class="silver">';
                             echo '<i class="fa-solid fa-ticket-simple"></i>';
-                            echo '<p>Monthly Pass</p>';
-                            echo '<p>Silver</p>';
+                            echo '<p>Day Pass</p>';
+                            echo '<p>Visit for a day</p>';
                             echo "<button> &#8377; $pass</button>";
-                        echo '</section>';    
+                        echo '</section>';  
                     }
 
                     if($type == "Monthlypluspass"){
                         echo '<section class="gold">';
                             echo '<i class="fa-solid fa-ticket-simple"></i>';
-                            echo '<p>Monthly Plus Pass</p>';
-                            echo '<p>Gold</p>';
+                            echo '<p>Monthly+ Pass</p>';
+                            echo '<p>Access multiple gyms</p>';
                             echo "<button> &#8377;  $pass</button>";
                         echo '</section>';    
                     }

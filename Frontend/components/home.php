@@ -128,7 +128,9 @@ session_start();
                         <p>Just pay when you go</p>
                     </div>
                     <div class="line6">
-                        <button>View Gyms</button>
+                        <button>                            
+                            <a href="search.php">View Gyms</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -167,7 +169,9 @@ session_start();
                         <p style="color: black;">for single Gym use</p>
                     </div>
                     <div class="line6">
-                        <button>View Gyms</button>
+                        <button>                            
+                            <a href="search.php">View Gyms</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -206,7 +210,9 @@ session_start();
                         <p>comes with extra features</p>
                     </div>
                     <div class="line6">
-                        <button>View Gyms</button>
+                        <button>
+                            <a href="search.php">View Gyms</a>
+                        </button>
                     </div>
                 </div>
             </div>

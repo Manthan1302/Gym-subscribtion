@@ -106,3 +106,11 @@
 
 
 ?>
+
+<!-- 
+    insert query
+
+    insert into gym values(2546 , 'Aura fitness' , 'Behrampura' , '["https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"]' , '{"Platinum":0}' , '["Cardio machines", "Fitness studio", "Resistance machines", "Olympic weights", "Functional Training", "Free weights", "Personal Training", "Towels"]' , '["Changing Rooms", "Lockers", "Showers"]' , "aura fitness wonderfull gym");
+Query OK, 1 row affected (0.49 sec)
+
+ -->
