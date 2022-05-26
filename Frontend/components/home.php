@@ -23,7 +23,7 @@ session_start();
                 <div class="start-gym-nav">
                     <span class="name">Gymnastix</span>
                     <span class="li">About us</span>
-                    <span class="li">Membership pass</span>
+                    <span class="li"><a href="#membershipasses">Membership pass</a></span>
                     <span class="li"><a href="search.php">View Gyms</a></span>
                     <span class="li"><a href="login.php"> Profile</a></span>
                 </div>
@@ -96,7 +96,7 @@ session_start();
 
         </div>
     </div>
-    <div class="membership">
+    <div class="membership" id="membershipasses">
         <div class="title">
             <p>Our Pass Types</p>
         </div>
@@ -135,7 +135,9 @@ session_start();
                         <p>Just pay when you go</p>
                     </div>
                     <div class="line6">
-                        <button>View Gyms</button>
+                        <button>                            
+                            <a href="search.php">View Gyms</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -174,7 +176,9 @@ session_start();
                         <p style="color: black;">for single Gym use</p>
                     </div>
                     <div class="line6">
-                        <button>View Gyms</button>
+                        <button>                            
+                            <a href="search.php">View Gyms</a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -213,7 +217,9 @@ session_start();
                         <p>comes with extra features</p>
                     </div>
                     <div class="line6">
-                        <button>View Gyms</button>
+                        <button>
+                            <a href="membershipass.php">View Gyms</a>
+                        </button>
                     </div>
                 </div>
             </div>

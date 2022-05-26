@@ -4,7 +4,7 @@ $gymid = $_REQUEST['id'];
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -110,21 +110,12 @@ while($row = mysqli_fetch_array($result)){
                 foreach($gympass as $type => $pass){
                     // echo "pass = $pass ,";
                     if($type == "Daypass"){
-                        echo '<section class="bronze">';
-                            echo '<i class="fa-solid fa-ticket-simple"></i>';
-                            echo '<p>Day Pass</p>';
-                            echo '<p>Bronze</p>';
-                            echo "<button> &#8377; $pass</button>";
-                        echo '</section>';  
-                    }
-
-                    if($type == "Monthlypass"){
                         echo '<section class="silver">';
                             echo '<i class="fa-solid fa-ticket-simple"></i>';
-                            echo '<p>Monthly Pass</p>';
-                            echo '<p>Silver</p>';
+                            echo '<p>Day Pass</p>';
+                            echo '<p>Visit for a day</p>';
                             echo "<button> &#8377; $pass</button>";
-                        echo '</section>';    
+                        echo '</section>';  
                     }
 
                     if($type == "Monthlypluspass"){
