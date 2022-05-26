@@ -3,7 +3,7 @@
     // creating database
     $host = "localhost";
     $user = "root";
-    $pass = "rohit1979";
+    $pass = "";
 
     $server = mysqli_connect($host , $user , $pass);
     
@@ -59,6 +59,7 @@
     }else{
     echo "<br /> feedback table fk not updated!";
     }
+
 
     //  gym table
     $gymTableQuery = "create table gym( gymId int primary key , gymName varchar(50) , gymLocation varchar(50) , gymImages JSON , gymPass JSON , gymEquipment JSON , gymAmenities JSON , aboutGym varchar(400))";

@@ -86,7 +86,14 @@ session_start();
                 </div>
 
             </div>
-            
+
+            <div class="how-works-button">
+                
+                <button>Explore our Passes</button>
+               
+
+            </div>
+
         </div>
     </div>
     <div class="membership" id="membershipasses">
