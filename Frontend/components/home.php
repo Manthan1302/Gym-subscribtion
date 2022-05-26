@@ -218,7 +218,7 @@ session_start();
                     </div>
                     <div class="line6">
                         <button>
-                            <a href="search.php">View Gyms</a>
+                            <a href="membershipass.php">View Gyms</a>
                         </button>
                     </div>
                 </div>
