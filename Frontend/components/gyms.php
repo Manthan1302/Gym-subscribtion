@@ -6,7 +6,7 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -72,24 +72,17 @@ if($connection){
                 </div>
                 <div>
                     <p>Gyms Location</p>
-                    <input type="text" placeholder="Enter About gyms" class="input-text" name="about">
+                    <input type="text" placeholder="Enter About gyms" class="input-text" name="address">
                 </div>
             </div><br>
             <div>
             <p>Pass Type</p>
-                <div class="pass">
-                <span>Bronze</span> <input type="text" placeholder="Enter Amount" class="input-text" >
-                 </div><br>
-               <div  class="pass"> <span>Silver</span> <input type="text" placeholder="Enter Amount" class="input-text"></div><br>
-               <div  class="pass"> <span>Gold</span> <input type="text" placeholder="Enter Amount" class="input-text"> </div><br>
-               <div  class="pass"> <span>Platinum</span> <input type="text" placeholder="Enter Amount" class="input-text"></div>
-
-          
-
+               <div  class="pass"> <span>Silver</span> <input type="text" name="silver" placeholder="Enter Amount" class="input-text"></div><br>
+               <div  class="pass"> <span>Gold</span> <input type="text" name="gold" placeholder="Enter Amount" class="input-text"> </div><br>
             </div>
             <div style="text-align: center;" >
                 <p>About Gyms</p>
-                <textarea  placeholder="Enter Gym Address "  rows="4" cols="70" name="address"></textarea><br><br>
+                <textarea  placeholder="Enter Gym Address "  rows="4" cols="70" name="about"></textarea><br><br>
                 <button name="addGym">Add Gym</button>
             </div>
             
@@ -107,45 +100,63 @@ if($connection){
 </body> 
 </html>
 <?php
-if(isset($_POST['addGym']))
-$name = $_POST['gymname'];
-$equipment = $_POST['equipment'];
-$amenities = $_POST['amenities'];
-$about = $_POST['about'];
-$address = $_POST['address'];
-$gid = rand(1000 , 9999);
+    if(isset($_POST['addGym'])){
+        $name = $_POST['gymname'];
+        $equipment = $_POST['equipment'];
+        $amenities = $_POST['amenities'];
+        $about = $_POST['about'];
+        $location = $_POST['address'];
+        $gid = rand(1000 , 9999);
+        $gold = $_POST['gold'];
+        $silver = $_POST['silver'];
 
-$filename = $_FILES['image']['name'];
-$imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
-$extensions_arr = array("jpg","jpeg","png","gif");
-if( in_array($imageFileType,$extensions_arr) ){
-	if(move_uploaded_file($_FILES["image"]["tmp_name"],'upload/'.$filename)){
-		
-		$insert = "insert into gym(file_name) values('$gid','$name','$equipment','$amenities','$about','$address')";
-		if(mysqli_query($conn, $insert)){
-		  echo 'Data inserted successfully';
-		}
-		else{
-		  echo 'Error: '.mysqli_error($conn);
-		}
-	}else{
-		echo 'Error in uploading file - '.$_FILES['image']['name'].'<br/>';
-	}
-	
-} 
+        if(empty($name) or empty($equipment) or empty($amenities) or empty($about) or empty($location)){
+            echo '<script>';
+            echo "alert('all details are important')";
+            echo '</script>';
+        }else{
+
+            $gymequipment = json_encode(explode("," , $equipment));
+            $gymaminities = json_encode(explode("," , $amenities));
+            var_dump($gymequipment);
+            $pass = array("Daypass"=>$silver , "Monthlypluspass"=>$gold);
+            $gymPass = json_encode($pass);
+            $gymImage = json_encode(array("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"));
+
+            $addgymquery = "insert into gym values('$gid','$name','$location', '$gymImage' ,'$gymPass','$gymequipment','$gymaminities','$about')";
+            $insertGym = mysqli_query($connection , $addgymquery);
+            if ($insertGym) {
+                echo '<script>';
+                echo "alert('data recorded successfully')";
+                echo '</script>';
+            }else{
+                echo '<script>';
+                echo "alert('something went wrong')";
+                echo '</script>';
+            }
+            
+            // echo $addgymquery;
+        }
+
+        // insert into gym values(7824 , 'Black The Gym' , 'Maninagar' , '["https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"]' , '{"Platinum":0}' , '["Cardio machines", "Fitness studio", "Resistance machines", "Olympic weights", "Functional Training", "Free weights", "Personal Training", "Towels"]' , '["Changing Rooms", "Lockers", "Showers"]' , "aura fitness wonderfull gym");
+        
+    }
 
 
 
 
 
 
-$query = "select * from user";
-$gyms =  mysqli_query($connection , $query);
 
-while($res = mysqli_fetch_array($gyms)) { 
+// $query = "select * from user";
+// $gyms =  mysqli_query($connection , $query);
+
+// while($res = mysqli_fetch_array($gyms)) { 
     
-}
+// }
 ?>
+ 
+<!-- logout -->
 <?php
             
     if(isset($_POST['logout'])){
