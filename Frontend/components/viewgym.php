@@ -121,9 +121,9 @@ while($row = mysqli_fetch_array($result)){
                     if($type == "Monthlypluspass"){
                         echo '<section class="gold">';
                             echo '<i class="fa-solid fa-ticket-simple"></i>';
-                            echo '<p>Monthly Pass</p>';
-                            echo '<p>Visit for a Month</p>';
-                            echo "<button> &#8377;  $pass</button>";
+                            echo '<p>Monthly Plus Pass</p>';
+                            echo '<p>Gold</p>';
+                            echo "<button > &#8377;  $pass</button>";
                         echo '</section>';    
                     }
                 }

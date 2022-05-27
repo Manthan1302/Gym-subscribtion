@@ -49,7 +49,7 @@ session_start();
                     <span style="font-size: 20px;"> Subscription pass</span>
                 </div>
             </a>
-            <a href="feedback.html">
+            <a href="feedback.php">
                 <div class="card">
                     <i class="fas fa-comment-alt" style="font-size: 50px; margin-top:55px;"></i>
                     <br><br>
