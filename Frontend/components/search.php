@@ -269,3 +269,4 @@ $search = mysqli_query($connection , $query);
 </body>
 </html>
 
+<!-- insert into gym values(7824 , 'Black The Gym' , 'Maninagar' , '["https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"]' , '{"Daypass": 290, "Monthlypluspass": 2500}' , '["Cardio machines", "Fitness studio", "Resistance machines", "Olympic weights", "Functional Training", "Free weights", "Personal Training", "Towels"]' , '["Changing Rooms", "Lockers", "Showers"]' , "aura fitness wonderfull gym"); -->
