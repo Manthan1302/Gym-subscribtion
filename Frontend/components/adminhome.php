@@ -1,6 +1,10 @@
 <?php
 session_start();
+if(empty($_SESSION['adminemail'])){
 
+    header("Location:login.php");
+
+}
 ?>
 <html>
     <head>
@@ -42,7 +46,7 @@ session_start();
         <br><br>
 
         <div  class="admin-functions">
-            <a href="pass.html">
+            <a href="pass.php">
                 <div class="card"> 
                     <i class="fas fa-ticket-alt" style="font-size: 50px; margin-top:55px;"></i>
                     <br><br>

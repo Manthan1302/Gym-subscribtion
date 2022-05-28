@@ -1,8 +1,7 @@
 <?php
-
 $host = "localhost";
 $user = "root";
-$pass = "rohit1979";
+$pass = "";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -20,6 +19,9 @@ if($connection){
 $query = "select * from gym";
 $search = mysqli_query($connection , $query);
 
+$oId = rand(100,7000);
+session_start();
+$uid = $_SESSION['userid'];
 
 
 ?>
@@ -59,7 +61,16 @@ $search = mysqli_query($connection , $query);
             <label>
                 SFW , Life Fitness , Aura
             </label>
-            <button> &#8377; 4000</button>
+            <form method="post" action="../paytmKit/pgRedirect.php">
+            <input id="ORDER_ID" type="hidden" tabindex="1" maxlength="20" size="20" name="ORDER_ID"  autocomplete="off"value="<?php echo  $oId?>">
+            <input id="CUST_ID" type="hidden"  tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value=<?php echo $uid?>>
+            <input id="INDUSTRY_TYPE_ID" type="hidden" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
+            <input id="CHANNEL_ID" tabindex="4" type="hidden" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+            <input title="TXN_AMOUNT" tabindex="10" type="hidden" name="TXN_AMOUNT" value=4000 > 
+            <input value="&#8377;4000" type="submit" class='button-pay'>
+
+            <!-- <button> &#8377; 4000</button> -->
+            </form>	
         </div>
         </div>
 
@@ -77,7 +88,16 @@ $search = mysqli_query($connection , $query);
                 SFW , Life Fitness , Aura ,
                 Black the gym , Fitwave
             </label>
-            <button> &#8377; 8000</button>
+            <form method="post" action="../paytmKit/pgRedirect.php">
+            <input id="ORDER_ID" type="hidden" tabindex="1" maxlength="20" size="20" name="ORDER_ID"  autocomplete="off"value="<?php echo  $oId?>">
+            <input id="CUST_ID" type="hidden"  tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value=<?php echo $uid?>>
+            <input id="INDUSTRY_TYPE_ID" type="hidden" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
+            <input id="CHANNEL_ID" tabindex="4" type="hidden" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+            <input title="TXN_AMOUNT" tabindex="10" type="hidden" name="TXN_AMOUNT" value=8000 > 
+            <input value="&#8377;8000" type="submit" class='button-pay'>
+
+            <!-- <button> &#8377; 8000</button> -->
+            </form>	
         </div>
         </div>
 
@@ -95,7 +115,16 @@ $search = mysqli_query($connection , $query);
             SFW , Life Fitness , Aura ,
                 Black the gym , Fitwave , unix gym
             </label>
-            <button> &#8377; 12000</button>
+            <form method="post" action="../paytmKit/pgRedirect.php">
+            <input id="ORDER_ID" type="hidden" tabindex="1" maxlength="20" size="20" name="ORDER_ID"  autocomplete="off"value="<?php echo  $oId?>">
+            <input id="CUST_ID" type="hidden"  tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value=<?php echo $uid?>>
+            <input id="INDUSTRY_TYPE_ID" type="hidden" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
+            <input id="CHANNEL_ID" tabindex="4" type="hidden" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+            <input title="TXN_AMOUNT" tabindex="10" type="hidden" name="TXN_AMOUNT" value=12000 > 
+            <input value="&#8377;12000" type="submit" class='button-pay'>
+
+            <!-- <button> &#8377; 12000</button> -->
+            </form>	
         </div>
         </div>
 

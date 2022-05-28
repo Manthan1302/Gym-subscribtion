@@ -19,14 +19,11 @@ $TXN_AMOUNT = $_POST["TXN_AMOUNT"];
 $paramList["MID"] = PAYTM_MERCHANT_MID;
 $paramList["ORDER_ID"] = $ORDER_ID;
 $paramList["CUST_ID"] = $CUST_ID;
-$paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;	
+$paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;
 $paramList["CHANNEL_ID"] = $CHANNEL_ID;
 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
-$paramList["CALLBACK_URL"] = "http://localhost/gym%20project/Frontend/components/home.php";
-// $paramList["CALLBACK_URL"] = "http://localhost/PaytmKit/pgResponse.php";
-
-// $paramList["CALLBACK_URL"] = "http://localhost/gym%20project/Frontend/components/home.php";
+$paramList["CALLBACK_URL"] = "http://localhost/gym%20project/Frontend/components/profile.php";
 
 
 /*

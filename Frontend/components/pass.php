@@ -27,14 +27,15 @@ if($connection){
 ?>
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="../style/feedback.css" type="text/css">
+    <link rel="stylesheet" href="../style/pass.css" type="text/css">
     <script src="https://kit.fontawesome.com/4228e33b37.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
     <div class="admin-nav">
         <div>
-           <a href="adminhome.php"> <h2 style="margin-left: 20px; ">Gymasio Dashboard</h2></a>
+            <a href="adminhome.php"> <h2 style="margin-left: 20px; ">Gymasio Dashboard</h2></a>
+
         </div>
         <div>
         <form method="post">
@@ -47,14 +48,10 @@ if($connection){
 
     <br><br><br>
 
-    <h2 style="color: white;margin-left: 52px;">Feedback</h2>
+    <h2 style="color: white;margin-left: 52px;">Subscription Pass</h2>
     <br><br>
-   
-</body>
-</html>
-
-<?php
-$query = "select * from feedback";
+    <<?php
+$query = "select * from pass";
 $feedback =  mysqli_query($connection , $query);
 
 
@@ -62,7 +59,9 @@ echo "<table class='table-pass'>";
 echo "<tr class='border-tr' style='background-color: white;color:black;'>";
 echo "<td>User Name</td>";
 echo "<td>User Email</td>";
-echo "<td>Feedback Message</td>";
+echo "<td>Pass Type</td>";
+echo "<td>Pass Price</td>";
+
 echo " </tr>";
 while($res = mysqli_fetch_array($feedback)) { 
 echo " <tr class='border-tr'>";
@@ -76,7 +75,9 @@ echo " <tr class='border-tr'>";
     } 
 
 
-echo "<td>".$res['feedbackMessage']."</td>";
+echo "<td>".$res['passType']."</td>";
+echo "<td>".$res['passPrice']."</td>";
+
 echo " </tr>";
 
 }
@@ -85,6 +86,8 @@ echo " </tr>";
 echo " </table>"
 
 ?>
+</body>
+</html>
 <?php
             
     if(isset($_POST['logout'])){

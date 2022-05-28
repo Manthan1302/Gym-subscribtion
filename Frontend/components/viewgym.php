@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 $gymid = $_REQUEST['id'];
-
 $host = "localhost";
 $user = "root";
-$pass = "rohit1979";
+$pass = "";
 $dbname = "gym_database";
+$uid = base64_encode($_SESSION['userid']);
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
 
@@ -114,7 +114,7 @@ while($row = mysqli_fetch_array($result)){
                             echo '<i class="fa-solid fa-ticket-simple"></i>';
                             echo '<p>Day Pass</p>';
                             echo '<p>Visit for a day</p>';
-                            echo "<button> &#8377; $pass</button>";
+                            echo "<a href='GymPayment.php?custid=$uid&amount=$pass&name=$gymname&location=$gymlocation&image=$img&type=Daypass'> <button> &#8377; $pass</button></a>";
                         echo '</section>';  
                     }
 
@@ -123,7 +123,7 @@ while($row = mysqli_fetch_array($result)){
                             echo '<i class="fa-solid fa-ticket-simple"></i>';
                             echo '<p>Monthly Plus Pass</p>';
                             echo '<p>Gold</p>';
-                            echo "<button > &#8377;  $pass</button>";
+                            echo "<a href='GymPayment.php?custid=$uid&amount=$pass&name=$gymname&location=$gymlocation&image=$img&type=Monthlypluspass'> <button>&#8377;$pass</button></a>";
                         echo '</section>';    
                     }
                 }

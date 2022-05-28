@@ -131,7 +131,11 @@ if($connection){
         }
 
         if($email == 'admin@gmail.com' && $password=="123456"){
+            $_SESSION['adminemail'] = $email;
+            $_SESSION['adminpass'] = $password;
+
             header("Location:adminhome.php");
+            
         }
 
     }

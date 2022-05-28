@@ -62,6 +62,7 @@ if (PAYTM_ENVIRONMENT == 'PROD') {
 	//Change this constant's value with Merchant key received from Paytm.
 	$PAYTM_MERCHANT_MID 		= "pudgYh77321166481865";
 	$PAYTM_MERCHANT_KEY 		= "c_to6Tap@C0plhy5";
+
 	$PAYTM_CHANNEL_ID 		= "WEB";
 	$PAYTM_INDUSTRY_TYPE_ID = "Retail";
 	$PAYTM_MERCHANT_WEBSITE = "WEBSTAGING";

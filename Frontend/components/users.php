@@ -3,7 +3,11 @@
 
 session_start();
 
+if(empty($_SESSION['adminemail'])){
 
+    header("Location:login.php");
+
+}
 $host = "localhost";
 $user = "root";
 $pass = "";
