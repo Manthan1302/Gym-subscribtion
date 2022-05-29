@@ -22,7 +22,7 @@ session_start();
             <div class="start-gym-body">
                 <div class="start-gym-nav">
                     <span class="name">Gymnastix</span>
-                    <span class="li">About us</span>
+                    <span class="li"><a href="about.php">About us</a></span>
                     <span class="li"><a href="#membershipasses">Membership pass</a></span>
                     <span class="li"><a href="search.php">View Gyms</a></span>
                     <span class="li"><a href="login.php"> Profile</a></span>

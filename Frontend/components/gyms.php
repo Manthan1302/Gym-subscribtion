@@ -43,7 +43,7 @@ if($connection){
     <h2 style="color: white;margin-left: 52px;">Manage Gyms </h2>
     <br><br>
     <div class="form">
-        <form method='post'>
+        <form method='post' enctype="multipart/form-data" action="">
             <br><br>
            
             <div style="display: flex; justify-content: space-around;">
@@ -59,7 +59,7 @@ if($connection){
             <div style="text-align: center;">
                 <div class="upload-btn-wrapper" >
                     <btn class="btn-admin"><i class="fas fa-cloud-upload-alt" style="margin-top:100px;"></i></btn>
-                <input type="file" name="image"  id="file" multiple/><br><br>
+                <input type="file" name="image[]"  id="file" multiple/><br><br>
                 </div><br>
                 <div class="upload-image-button"> 
                         <button class="btn2-admin">UPLOAD IMAGE</button>
@@ -82,8 +82,8 @@ if($connection){
             </div>
             <div style="text-align: center;" >
                 <p>About Gyms</p>
-                <textarea  placeholder="Enter Gym Address "  rows="4" cols="70" name="about"></textarea><br><br>
-                <button name="addGym">Add Gym</button>
+                <textarea  placeholder="Enter Gym Address "  rows="4" cols="65" name="about"></textarea><br><br>
+                <input type=submit name="addGym" value="Add Gym"></input>
             </div>
             
         
@@ -121,40 +121,98 @@ if($connection){
             var_dump($gymequipment);
             $pass = array("Daypass"=>$silver , "Monthlypluspass"=>$gold);
             $gymPass = json_encode($pass);
-            $gymImage = json_encode(array("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"));
-
-            $addgymquery = "insert into gym values('$gid','$name','$location', '$gymImage' ,'$gymPass','$gymequipment','$gymaminities','$about')";
-            $insertGym = mysqli_query($connection , $addgymquery);
-            if ($insertGym) {
-                echo '<script>';
-                echo "alert('data recorded successfully')";
-                echo '</script>';
-            }else{
-                echo '<script>';
-                echo "alert('something went wrong')";
-                echo '</script>';
+            // $extension=array('jpeg','jpg','png','gif');
+            // foreach ($_FILES['image']['tmp_name'] as $key => $value) {
+            //     $filename=$_FILES['image']['name'][$key];
+            //     $filename_tmp=$_FILES['image']['tmp_name'][$key];
+            //     echo '<br>';
+            //     $ext=pathinfo($filename,PATHINFO_EXTENSION);
+            //     $finalimg='';
+            //     if(in_array($ext,$extension))
+            //     {
+            //         move_uploaded_file($filename_tmp, 'images/'.$filename);
+            //         $finalimg=$filename;
+                   
+            //     }
+                    $addgymquery = "insert into gym values('$gid','$name','$location', '$finalimg' ,'$gymPass','$gymequipment','$gymaminities','$about')";
+                    $insertGym = mysqli_query($connection , $addgymquery);
+                    if ($insertGym) {
+                        echo '<script>';
+                        echo "alert('data recorded successfully')";
+                        echo '</script>';
+                    }else{
+                        echo '<script>';
+                        echo "alert('something went wrong')";
+                        echo '</script>';
+                    }
+                }
             }
+           
+            // $gymImage = json_encode(array("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"));
+            
+        
             
             // echo $addgymquery;
-        }
+        // }
 
         // insert into gym values(7824 , 'Black The Gym' , 'Maninagar' , '["https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"]' , '{"Platinum":0}' , '["Cardio machines", "Fitness studio", "Resistance machines", "Olympic weights", "Functional Training", "Free weights", "Personal Training", "Towels"]' , '["Changing Rooms", "Lockers", "Showers"]' , "aura fitness wonderfull gym");
         
-    }
-
-
-
-
-
-
-
-// $query = "select * from user";
-// $gyms =  mysqli_query($connection , $query);
-
-// while($res = mysqli_fetch_array($gyms)) { 
     
-// }
+
+
+
+
+
+
 ?>
+
+
+<div class="gym-container">
+    <div class="gyms">
+<?php
+
+$query = "select * from gym";
+$gyms =  mysqli_query($connection , $query);
+
+while($row = mysqli_fetch_array($gyms)) { 
+                    $gymid = $row['gymId'];
+                    $gymname = $row['gymName'];
+                    $gymlocation = $row['gymLocation'];
+                    $gymimage = json_decode($row['gymImages']);
+                    $gymamenities = json_decode($row['gymAmenities']);
+                    $gympass = json_decode($row['gymPass']);
+                    // $daypass = $gympass->Daypass;
+                    // $monthpass = $gympass->Monthlypass;
+                    $aboutgym = $row['aboutGym'];
+                    $gymequip = json_decode($row['gymEquipment']);
+    
+                    echo '<div class="card">';
+                        echo "<img src='$gymimage[0]'>";
+                    
+                        echo "<div class='names'>";
+                            echo "<p>$gymname</p>";
+                            echo "<p>$gymlocation</p>";
+                        echo "</div>";
+    
+                        echo '<div class="points">';
+                            echo '<ul type="bullet">';
+                                foreach($gymequip as $equip){
+                                    echo "<li>$equip</li>";
+                                }
+                            echo "</ul>";
+                        echo "</div>";
+                        echo '<div class="pass-button">';   
+                                echo "<section>";
+                                    echo "<button class='gyms-button'><a href='viewgym.php?id=$gymid'>View Passes</a></button>";
+                                echo "</section>";
+                        echo "</div>";
+                    echo "</div>";
+}
+?>
+
+
+
+
  
 <!-- logout -->
 <?php

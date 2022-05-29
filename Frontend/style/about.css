@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Titillium+Web:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+body{
+    padding: 0;
+    margin: 0;
+}
+.profile-container{
+    background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  background-color: black;
+}
+
+.profile-container .home-nav{
+    background-color: white;
+    width: 20vw;
+    height: 50vh;
+    margin-top: 10%;
+    margin-left: 2%;
+    position: fixed;
+    font-family: "Titillium Web", sans-serif;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-container .home-nav label{
+    font-size: 40px;
+}
+
+.profile-container .home-nav button{
+    height: 5vh;
+    width: 7vw;
+    font-size: 15px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-container .home-nav button:focus {
+    outline: 0;
+  }
+
+.profile-container .home-nav button:active {
+    transform: scale(0.9);
+  }
+
+.profile-container .home-nav p{
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.profile-container .home-nav p a{
+    text-decoration: none;
+    color: black;
+}
+
+.profile-container .home-nav label a{
+    text-decoration: none;
+    color: black;
+}
+
+.profile-container .profile-body{
+    margin-left: 27%;
+    margin-top: 5%;
+    background-color: white;
+    height: 65vh;
+    width: 65vw;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px white;
+    padding: 20px;
+    
+}
+.profile-container .profile-body h3{
+    margin-left: 25px;
+}
+.profile-container .profile-body p{
+    margin-left: 15px;
+    font-size: 18px;
+    text-align: justify;
+
+}
+.profile-container .profile-body textarea{
+    margin-left: 45px;
+   
+
+}
+.button{
+    padding:5px;
+    background-color:transparent;
+    height:40px;
+    width:95px;
+    font-size:20px;
+    outline: none;
+    border: 2px solid black;
+    transition: 0.6s ease-in-out;
+  transform: scale(1.1, 1.1);
+  font-family: "Quicksand", sans-serif;
+  margin-left: 200px;
+}

@@ -135,7 +135,6 @@ if($connection){
             $_SESSION['adminpass'] = $password;
 
             header("Location:adminhome.php");
-            
         }
 
     }

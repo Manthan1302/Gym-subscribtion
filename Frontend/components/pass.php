@@ -52,7 +52,7 @@ if($connection){
     <br><br>
     <<?php
 $query = "select * from pass";
-$feedback =  mysqli_query($connection , $query);
+$spass =  mysqli_query($connection , $query);
 
 
 echo "<table class='table-pass'>";
@@ -63,7 +63,7 @@ echo "<td>Pass Type</td>";
 echo "<td>Pass Price</td>";
 
 echo " </tr>";
-while($res = mysqli_fetch_array($feedback)) { 
+while($res = mysqli_fetch_array($spass)) { 
 echo " <tr class='border-tr'>";
 
     $userId = $res['user_id'];

@@ -100,3 +100,121 @@ body{
     display: flex;
     justify-content: space-around;
   }
+  .gym-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+}
+
+.gym-container .gyms{
+    width: 96vw;
+    height: auto;
+
+    /* background-color: aqua; */
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gym-container .gyms .card{
+    height: 70vh;
+    width: 30vw;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    
+    margin-bottom: 1.5%;
+}
+
+.gym-container .gyms .card img{
+    width: 25vw;
+    height: 33vh;
+}
+
+/* .gym-container .gyms .card .names{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+    /* background-color: aqua;
+    width: 25vw;
+} */ 
+
+.gym-container .gyms .card p{
+    margin-top: -0.5%;
+
+ font-size: 20px;
+}
+
+/* .gym-container .gyms .card .points{
+    background-color: cadetblue;
+    height: 5vw;
+} */
+
+.gym-container .gyms .card ul{
+    margin-top: -5%;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+}
+
+.gym-container .gyms .card ul li{
+    /* background-color: green; */
+    /* width: 8vw; */
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    margin: 0% 3%;
+
+}
+
+.gym-container .gyms .card .pass-button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+}
+
+.gym-container .gyms .card .pass-button section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -6%;
+    /* background-color: aqua; */
+    width: 11vw;
+    
+}
+
+.gym-container .gyms .card .pass-button section p{
+    font-size: 15px;
+    font-family: "Quicksand", sans-serif;
+
+}
+
+.gym-container .gyms .card .pass-button section button{
+    background-color: black;
+    color: white;
+    width: 10vw;
+    height: 6vh;
+    /* padding: 5px; */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gym-container .gyms .card .pass-button section button a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}

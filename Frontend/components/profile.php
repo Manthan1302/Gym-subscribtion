@@ -27,7 +27,7 @@ $email = $_SESSION['email'];
             <label>
                 <a href="home.php">Gymnastix</a>
             </label>
-            <p><a href="">About us</a></p>
+            <p><a href="about.php">About us</a></p>
             <p><a href="search.php">View Gyms</a></p>
             <form method="post">
                 <button name="logout">Log out</button>
