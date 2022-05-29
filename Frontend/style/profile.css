@@ -169,6 +169,11 @@ background-color: black;
     cursor: pointer;
 }
 
+.profile-body .user-profile .user-details button a{
+    text-decoration: none;
+    color: black;
+}
+
 .profile-body .user-profile .user-details button:active {
     transform: scale(0.9);
   }

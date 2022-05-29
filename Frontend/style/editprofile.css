@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Titillium+Web:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.nav{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    height:70px;
+    font-size:25px;
+    background-color: white;
+}
+
+.nav .nav-left{
+    font-family: 'Josefin Sans';
+}
+
+.nav .nav-left a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav .nav-right{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 28vw;
+    height: 8vh;
+    font-family: 'Josefin Sans';
+}
+
+.nav .nav-right p a{
+    text-decoration: none;
+    color: black;
+}
+
+.form{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.form h2{
+    font-family: "PT Sans Narrow";
+    font-size: 25px;
+    color: white;
+}
+
+.form form{
+    height: 65vh;
+    width: 40vw;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form form label{
+
+    font-size: 25px;
+    font-family: "Quicksand";
+    color: black;
+}
+
+.form form input{
+    font-size: 18px;
+    height: 5vh;
+    width: 15vw;
+    outline: none;
+}
+
+.form form button{
+    height: 5vh;
+    width: 8vw;
+    font-size: 18px;
+    font-family: "Quicksand";
+    background-color: black;
+    color: white;
+}

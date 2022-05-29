@@ -8,7 +8,7 @@ if(!empty($_SESSION['userid'])){
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);

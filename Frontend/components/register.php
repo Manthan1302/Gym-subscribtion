@@ -36,7 +36,8 @@ if($connection){
     <div class="login">
         <h2>Register</h2><br>
     </div>
-    <div class="form"><h2>Register with Email</h2>
+    <div class="form">
+        <h2>Register with Email</h2>
     <form method="post">
         <input type="text" name="firstname" placeholder="First Name" class="textbox-f" />
         <input type="text" name="lastname" placeholder="Last Name" class="textbox-f" /><br><br>

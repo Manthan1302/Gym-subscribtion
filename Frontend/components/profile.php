@@ -47,7 +47,7 @@ $email = $_SESSION['email'];
                     echo "<p> $email </p>";
 
                     ?>
-                    <button>edit</button>
+                    <button><a href="editprofile.php">edit</a></button>
                 </div>
             </div>
 

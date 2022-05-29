@@ -23,11 +23,12 @@ $paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;
 $paramList["CHANNEL_ID"] = $CHANNEL_ID;
 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
-$paramList["CALLBACK_URL"] = "http://localhost/gym%20project/Frontend/components/profile.php";
+// $paramList["CALLBACK_URL"] = "http://localhost/Gym-subscribtion/Frontend/components/profile.php";
+$paramList["CALLBACK_URL"] = "http://localhost/Gym-subscribtion/Frontend/PaytmKit/pgResponse.php";
+
 
 
 /*
-$paramList["CALLBACK_URL"] = "http://localhost/PaytmKit/pgResponse.php";
 $paramList["MSISDN"] = $MSISDN; //Mobile number of customer
 $paramList["EMAIL"] = $EMAIL; //Email ID of customer
 $paramList["VERIFIED_BY"] = "EMAIL"; //
