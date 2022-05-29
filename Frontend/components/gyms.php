@@ -6,7 +6,7 @@ session_start();
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -43,7 +43,9 @@ if($connection){
     <h2 style="color: white;margin-left: 52px;">Manage Gyms </h2>
     <br><br>
     <div class="form">
-        <form method='post' enctype="multipart/form-data" action="">
+
+        <form method='post' action='' enctype='multipart/form-data'>
+
             <br><br>
            
             <div style="display: flex; justify-content: space-around;">
@@ -59,7 +61,10 @@ if($connection){
             <div style="text-align: center;">
                 <div class="upload-btn-wrapper" >
                     <btn class="btn-admin"><i class="fas fa-cloud-upload-alt" style="margin-top:100px;"></i></btn>
-                <input type="file" name="image[]"  id="file" multiple/><br><br>
+
+
+                    <input type="file" name="upload[]" id="file" multiple/><br><br>
+
                 </div><br>
                 <div class="upload-image-button"> 
                         <button class="btn2-admin">UPLOAD IMAGE</button>
@@ -100,6 +105,11 @@ if($connection){
 </body> 
 </html>
 <?php
+
+    // php.ini
+    // 'post_max_size', '60M'
+    // 'upload_max_filesize', '60M'
+
     if(isset($_POST['addGym'])){
         $name = $_POST['gymname'];
         $equipment = $_POST['equipment'];
@@ -110,6 +120,7 @@ if($connection){
         $gold = $_POST['gold'];
         $silver = $_POST['silver'];
 
+
         if(empty($name) or empty($equipment) or empty($amenities) or empty($about) or empty($location)){
             echo '<script>';
             echo "alert('all details are important')";
@@ -118,28 +129,29 @@ if($connection){
 
             $gymequipment = json_encode(explode("," , $equipment));
             $gymaminities = json_encode(explode("," , $amenities));
-            var_dump($gymequipment);
+            // var_dump($gymequipment);
             $pass = array("Daypass"=>$silver , "Monthlypluspass"=>$gold);
             $gymPass = json_encode($pass);
-            // $extension=array('jpeg','jpg','png','gif');
-            // foreach ($_FILES['image']['tmp_name'] as $key => $value) {
-            //     $filename=$_FILES['image']['name'][$key];
-            //     $filename_tmp=$_FILES['image']['tmp_name'][$key];
-            //     echo '<br>';
-            //     $ext=pathinfo($filename,PATHINFO_EXTENSION);
-            //     $finalimg='';
-            //     if(in_array($ext,$extension))
-            //     {
-            //         move_uploaded_file($filename_tmp, 'images/'.$filename);
-            //         $finalimg=$filename;
-                   
-            //     }
-                    $addgymquery = "insert into gym values('$gid','$name','$location', '$finalimg' ,'$gymPass','$gymequipment','$gymaminities','$about')";
-                    $insertGym = mysqli_query($connection , $addgymquery);
-                    if ($insertGym) {
-                        echo '<script>';
-                        echo "alert('data recorded successfully')";
-                        echo '</script>';
+
+
+            $image = array();
+            $files = array_filter($_FILES['upload']['name']); //Use something similar before processing files.
+
+            $total_count = count($_FILES['upload']['name']);
+    
+            for( $i=0 ; $i < $total_count ; $i++ ) {
+    
+                $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+    
+                if ($tmpFilePath != ""){
+    
+                    $newFilePath = "uploads/" . $_FILES['upload']['name'][$i];
+    
+                    if(move_uploaded_file($tmpFilePath, $newFilePath)) {
+                        echo "$newFilePath <br>";
+                        array_push($image, $newFilePath);
+                        // echo "images inserted successfully";
+
                     }else{
                         echo '<script>';
                         echo "alert('something went wrong')";
@@ -147,20 +159,31 @@ if($connection){
                     }
                 }
             }
-           
-            // $gymImage = json_encode(array("https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"));
+            // var_dump($image);
+            $gymImage = json_encode($image);
+            // var_dump($gymImage);
             
-        
-            
-            // echo $addgymquery;
-        // }
+
+            $addgymquery = "insert into gym values('$gid','$name','$location', '$gymImage' ,'$gymPass','$gymequipment','$gymaminities','$about')";
+            $insertGym = mysqli_query($connection , $addgymquery);
+            if ($insertGym) {
+                echo '<script>';
+                echo "alert('data recorded successfully')";
+                echo '</script>';
+            }else{
+                echo '<script>';
+                echo "alert('something went wrong')";
+                echo '</script>';
+            }
+        }
+
 
         // insert into gym values(7824 , 'Black The Gym' , 'Maninagar' , '["https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e" , "https://images.unsplash.com/photo-1571388208497-71bedc66e932" , "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e"]' , '{"Platinum":0}' , '["Cardio machines", "Fitness studio", "Resistance machines", "Olympic weights", "Functional Training", "Free weights", "Personal Training", "Towels"]' , '["Changing Rooms", "Lockers", "Showers"]' , "aura fitness wonderfull gym");
         
     
 
 
-
+    }
 
 
 
@@ -221,5 +244,5 @@ while($row = mysqli_fetch_array($gyms)) {
         session_destroy();
         header("Location:login.php");
     }
-            
+
 ?>

@@ -491,6 +491,15 @@ membership-passes
   transition: 0.3s ease-in-out;
 }
 
+.membership .membership-container .membership-container-card .line6 button a{
+  color: white;
+  text-decoration: none;
+}
+
+.membership .membership-container .membership-container-card .line6 button:hover > a{
+  color: white;
+}
+
 .membership
   .membership-container
   .membership-container-card
