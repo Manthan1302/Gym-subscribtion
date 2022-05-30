@@ -1,5 +1,6 @@
-<!-- <?php
+<?php
 
+session_start();
 
 $id=base64_decode($_REQUEST['custid']);
 $am=$_REQUEST['amount'];
@@ -8,15 +9,18 @@ $location=$_REQUEST['location'];
 $image=$_REQUEST['image'];
 $type=$_REQUEST['type'];
 
-
-
 // $am=$_REQUEST['amount'];
 
+$gid = $_REQUEST['gid'];
+$color = $_REQUEST['color'];
 
-$oId = rand(100,7000);
+$oId = rand(1000,9999);
+
+$date = date("d-m-Y");
+$_SESSION['buypass'] = "insert into pass values('$oId','Day Pass','$am','$color','$date','$id','$gid')";
 
 
-?> -->
+?>
 
 <html>
         

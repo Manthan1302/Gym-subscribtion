@@ -1,4 +1,5 @@
 <?php
+
 header("Pragma: no-cache");
 header("Cache-Control: no-cache");
 header("Expires: 0");
@@ -8,7 +9,7 @@ require_once("./lib/config_paytm.php");
 require_once("./lib/encdec_paytm.php");
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -22,7 +23,7 @@ if($connection){
     echo 'console.log(" something went wrong in db connection")';
     echo '</script>';
 }
-$pId =rand(400,8000);
+
 $paytmChecksum = "";
 $paramList = array();
 $isValidChecksum = "FALSE";
@@ -39,15 +40,16 @@ if($isValidChecksum == "TRUE") {
 	if ($_POST["STATUS"] == "TXN_SUCCESS") {
 		// echo "<b>Transaction status is success</b>" . "<br/>";
 		echo "<script>alert('Transaction status is success');</script>" . "<br/>";
-		$insertquery = "insert into user values('$pId','$passName','$PassPrice','$PassType','$uid','$gid') ";
-		$login = mysqli_query($connection , $insertquery);
-		header("Location:../components/profile.php");
+
+		// echo "Transaction status is success <br>";
+		header("Location:../components/buypass.php?status=true");
 		
 	}
 	else {
 		
 		// echo "<b>Transaction status is failure</b>" . "<br/>";
 		echo "<script>alert('Transaction status is failure')</script>" . "<br/>";
+		header("Location:../components/search.php");
 	}
 
 	// if (isset($_POST) && count($_POST)>0 )

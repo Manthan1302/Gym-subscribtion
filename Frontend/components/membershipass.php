@@ -1,7 +1,9 @@
 <?php
+session_start();
+
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -20,9 +22,6 @@ $query = "select * from gym";
 $search = mysqli_query($connection , $query);
 
 $oId = rand(100,7000);
-session_start();
-$uid = $_SESSION['userid'];
-
 
 ?>
 
@@ -61,16 +60,25 @@ $uid = $_SESSION['userid'];
             <label>
                 SFW , Life Fitness , Aura
             </label>
-            <form method="post" action="../paytmKit/pgRedirect.php">
-            <input id="ORDER_ID" type="hidden" tabindex="1" maxlength="20" size="20" name="ORDER_ID"  autocomplete="off"value="<?php echo  $oId?>">
-            <input id="CUST_ID" type="hidden"  tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value=<?php echo $uid?>>
-            <input id="INDUSTRY_TYPE_ID" type="hidden" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
-            <input id="CHANNEL_ID" tabindex="4" type="hidden" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
-            <input title="TXN_AMOUNT" tabindex="10" type="hidden" name="TXN_AMOUNT" value=4000 > 
-            <input value="&#8377;4000" type="submit" class='button-pay'>
 
-            <!-- <button> &#8377; 4000</button> -->
+            <form method="post">
+                <button name="3monthpass"> &#8377; 4000</button>
             </form>	
+            <?php
+
+                    if(isset($_POST['3monthpass'])){
+                        $uid = $_SESSION['userid'];
+
+                        if(empty($uid)){
+                            header("Location:login.php");
+                        }else{
+                            $img = "https://images.unsplash.com/photo-1605296867304-46d5465a13f1";
+                            header("Location:platinumpay.php?custid=$uid&amount=4000&image=$img&type=3_Month_Pass&color=Platinum");
+                        }
+                    } 
+                  
+            
+            ?>
         </div>
         </div>
 
@@ -88,16 +96,24 @@ $uid = $_SESSION['userid'];
                 SFW , Life Fitness , Aura ,
                 Black the gym , Fitwave
             </label>
-            <form method="post" action="../paytmKit/pgRedirect.php">
-            <input id="ORDER_ID" type="hidden" tabindex="1" maxlength="20" size="20" name="ORDER_ID"  autocomplete="off"value="<?php echo  $oId?>">
-            <input id="CUST_ID" type="hidden"  tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value=<?php echo $uid?>>
-            <input id="INDUSTRY_TYPE_ID" type="hidden" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
-            <input id="CHANNEL_ID" tabindex="4" type="hidden" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
-            <input title="TXN_AMOUNT" tabindex="10" type="hidden" name="TXN_AMOUNT" value=8000 > 
-            <input value="&#8377;8000" type="submit" class='button-pay'>
-
-            <!-- <button> &#8377; 8000</button> -->
+            <form method="post">
+                <button name="4monthpass"> &#8377; 8000</button>
             </form>	
+            <?php
+
+                    if(isset($_POST['4monthpass'])){
+                        $uid = $_SESSION['userid'];
+
+                        if(empty($uid)){
+                            header("Location:login.php");
+                        }else{
+                            $img = "https://images.unsplash.com/photo-1605296867304-46d5465a13f1";
+                            header("Location:platinumpay.php?custid=$uid&amount=8000&image=$img&type=4_Month_Pass&color=Platinum");
+                        }
+                    } 
+                  
+            
+            ?>
         </div>
         </div>
 
@@ -115,16 +131,24 @@ $uid = $_SESSION['userid'];
             SFW , Life Fitness , Aura ,
                 Black the gym , Fitwave , unix gym
             </label>
-            <form method="post" action="../paytmKit/pgRedirect.php">
-            <input id="ORDER_ID" type="hidden" tabindex="1" maxlength="20" size="20" name="ORDER_ID"  autocomplete="off"value="<?php echo  $oId?>">
-            <input id="CUST_ID" type="hidden"  tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value=<?php echo $uid?>>
-            <input id="INDUSTRY_TYPE_ID" type="hidden" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail">
-            <input id="CHANNEL_ID" tabindex="4" type="hidden" maxlength="12" size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
-            <input title="TXN_AMOUNT" tabindex="10" type="hidden" name="TXN_AMOUNT" value=12000 > 
-            <input value="&#8377;12000" type="submit" class='button-pay'>
-
-            <!-- <button> &#8377; 12000</button> -->
+            <form method="post">
+                <button name="1yearpass"> &#8377; 12000</button>
             </form>	
+            <?php
+
+                    if(isset($_POST['1yearpass'])){
+                        $uid = $_SESSION['userid'];
+
+                        if(empty($uid)){
+                            header("Location:login.php");
+                        }else{
+                            $img = "https://images.unsplash.com/photo-1605296867304-46d5465a13f1";
+                            header("Location:platinumpay.php?custid=$uid&amount=12000&image=$img&type=1_Year_Pass&color=Platinum");
+                        }
+                    } 
+                  
+            
+            ?>
         </div>
         </div>
 

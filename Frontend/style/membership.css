@@ -208,4 +208,7 @@ body{
   transform: scale(1.1, 1.1);
   font-family: "Quicksand", sans-serif;
   text-align: center;
+
+  background-color: white;
+  color: black;
 }

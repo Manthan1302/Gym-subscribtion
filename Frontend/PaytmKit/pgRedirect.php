@@ -25,7 +25,9 @@ $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
 
 // $paramList["CALLBACK_URL"] = "http://localhost/gym%20project/Frontend/components/profile.php";
-$paramList["CALLBACK_URL"] = "http://localhost/gym%20project/Frontend/PaytmKit/pgResponse.php";
+// $paramList["CALLBACK_URL"] = "http://localhost/Gym-subscribtion/Frontend/components/profile.php";
+$paramList["CALLBACK_URL"] = "http://localhost/Gym-subscribtion/Frontend/PaytmKit/pgResponse.php";
+
 
 
 

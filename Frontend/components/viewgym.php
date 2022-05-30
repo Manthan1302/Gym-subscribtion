@@ -115,7 +115,16 @@ while($row = mysqli_fetch_array($result)){
                             echo '<p>Day Pass</p>';
                             echo '<p>Visit for a day</p>';
                             echo "<form method='post'> <button name='daypass'> &#8377; $pass</button></form>";
-                        echo '</section>';  
+                        echo '</section>';
+                        if(isset($_POST['daypass'])){
+                            $uid = base64_encode($_SESSION['userid']);
+        
+                            if(empty($uid)){
+                                header("Location:login.php");
+                            }else{
+                                header("Location:GymPayment.php?custid=$uid&amount=$pass&name=$gymname&location=$gymlocation&image=$img&type=Daypass&gid=$gymid&color=silver");
+                            }
+                        }  
                     }
 
                     if($type == "Monthlypluspass"){
@@ -124,30 +133,23 @@ while($row = mysqli_fetch_array($result)){
                             echo '<p>Monthly Plus Pass</p>';
                             echo '<p>Gold</p>';
                             echo "<form method='post'> <button name='monthpass'> &#8377; $pass</button></form>";
-                        echo '</section>';    
+                        echo '</section>';
+                        if(isset($_POST['monthpass'])){
+                            $uid = base64_encode($_SESSION['userid']);
+        
+                            if(empty($uid)){
+                                header("Location:login.php");
+                            }else{
+                                header("Location:GymPayment.php?custid=$uid&amount=$pass&name=$gymname&location=$gymlocation&image=$img&type=Monthlypluspass&gid=$gymid&color=gold");
+                            }
+                        }    
                     }
                 }
                        
                 // functions
-                if(isset($_POST['daypass'])){
-                    $uid = base64_encode($_SESSION['userid']);
+                
 
-                    if(empty($uid)){
-                        header("Location:login.php");
-                    }else{
-                        header("Location:GymPayment.php?custid=$uid&amount=$pass&name=$gymname&location=$gymlocation&image=$img&type=Daypass");
-                    }
-                }
-
-                if(isset($_POST['monthpass'])){
-                    $uid = base64_encode($_SESSION['userid']);
-
-                    if(empty($uid)){
-                        header("Location:login.php");
-                    }else{
-                        header("Location:GymPayment.php?custid=$uid&amount=$pass&name=$gymname&location=$gymlocation&image=$img&type=Monthlypluspass");
-                    }
-                }
+                
                     
                 ?>
             </div>

@@ -13,6 +13,16 @@ $fname = $_SESSION['firstname'];
 $lname = $_SESSION['lastname'];
 $email = $_SESSION['email'];
 
+$host = "localhost";
+$user = "root";
+$pass = "rohit1979";
+$dbname = "gym_database";
+
+$connection = mysqli_connect($host,$user,$pass,$dbname);
+
+$passquery = "select * from pass where user_id ='$uid'";
+$history = mysqli_query($connection,$passquery);
+
 ?>
 <html>
 
@@ -57,29 +67,46 @@ $email = $_SESSION['email'];
 
             <div class="user-pass">
 
-                <div class="pass">
-                    <p>08-05-2022</p>
-                    <p>sfw</p>
-                    <p>ahmedabad</p>
-                    <p>day pass</p>
-                    <p>bronze</p>
-                </div>
+                <?php
+                    $result = mysqli_num_rows($history);
+                    if($result > 0){
+                        while($row = mysqli_fetch_array($history)){
+                            $date = $row['date'];
+                            $passname = $row['passName'];
+                            $passtype = $row['passPrice'];
+                            $gymid = $row['gym_id'];
 
-                <div class="pass">
-                    <p>29-05-2022</p>
-                    <p>life fitness</p>
-                    <p>isanpur</p>
-                    <p>month pass</p>
-                    <p>silver</p>
-                </div>
+                            if($gymid != NULL){
+                                $gymquery = "select * from gym where gymId = '$gymid'";
+                                $ans = mysqli_query($connection,$gymquery);
 
-                <div class="pass">
-                    <p>23-07-2022</p>
-                    <p>aura fitness</p>
-                    <p>gandhinagar</p>
-                    <p>monthly + pass</p>
-                    <p>gold</p>
-                </div>
+                                while($line = mysqli_fetch_array($ans)){
+
+                                    $gymname = $line['gymName'];
+                                    $gymLocation = $line['gymLocation'];
+                                    
+                                    echo "<div class='pass'>";
+                                    echo "<p>$date</p>";
+                                    echo "<p>$gymname</p>";
+                                    echo "<p>$gymLocation</p>";
+                                    echo "<p>$passname</p>";
+                                    echo "<p>$passtype</p>";
+                                    echo "</div>";
+                                }
+                            }else{
+                                    echo "<div class='pass'>";
+                                    echo "<p>$date</p>";
+                                    echo "<p>All Gyms</p>";
+                                    echo "<p>Ahmedabad</p>";
+                                    echo "<p>$passname</p>";
+                                    echo "<p>$passtype</p>";
+                                    echo "</div>";
+                            }
+
+                        }
+                    }
+                ?>
+
             </div>
 
         </div>
