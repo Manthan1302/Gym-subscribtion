@@ -10,7 +10,7 @@ if(empty($_SESSION['userid'])){
 $uid = $_SESSION['userid'];
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "rohit1979";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
@@ -54,6 +54,7 @@ if($connection){
                 <a href="home.php">Gymnastix</a>
             </label>
             <p><a href="profile.php">Profile</a></p>
+            <p><a href="membershipass.php">Membership Pass</a></p>
             <p><a href="search.php">View Gyms</a></p>
             <form method="post">
                 <button name="logout">Log out</button>

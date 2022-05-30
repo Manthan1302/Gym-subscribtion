@@ -38,6 +38,7 @@ $history = mysqli_query($connection,$passquery);
                 <a href="home.php">Gymnastix</a>
             </label>
             <p><a href="about.php">About us</a></p>
+            <p><a href="membershipass.php">Membership Pass</a></p>
             <p><a href="search.php">View Gyms</a></p>
             <form method="post">
                 <button name="logout">Log out</button>
@@ -104,6 +105,10 @@ $history = mysqli_query($connection,$passquery);
                             }
 
                         }
+                    }else{
+                        echo "<div class='pass'>";
+                        echo "<p> No Passes bought yet</p>";
+                        echo "</div>";
                     }
                 ?>
 

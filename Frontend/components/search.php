@@ -41,7 +41,7 @@ $search = mysqli_query($connection , $query);
         <a href="home.php">Gymnastix</a>
         </div>
         <div class="nav-right">
-            <p><a href="">About</a></p>
+            <p><a href="about.php">About</a></p>
             <p><a href="profile.php">Profile</a></p>
         </div>
     </div>
