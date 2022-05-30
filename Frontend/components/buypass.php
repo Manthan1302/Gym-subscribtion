@@ -6,7 +6,7 @@ echo "buy pass query".$_SESSION['buypass'];
 
 $host = "localhost";
 $user = "root";
-$pass = "rohit1979";
+$pass = "";
 $dbname = "gym_database";
 
 $connection = mysqli_connect($host,$user,$pass,$dbname);
