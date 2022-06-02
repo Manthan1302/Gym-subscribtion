@@ -697,7 +697,7 @@ font-family: "Quicksand", sans-serif;
 .footer{
   display: flex;
   justify-content: space-around;
-  background-color: #2A2D36;
+  background-color: black;
   color: #9DB3BB;
   padding: 20px;
 
