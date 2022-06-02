@@ -51,7 +51,7 @@ if($connection){
     <div class="profile-container">
         <div class="home-nav">
             <label>
-                <a href="home.php">Gymnastix</a>
+                <a href="home.php">Gymnasio</a>
             </label>
             <p><a href="profile.php">Profile</a></p>
             <p><a href="search.php">View Gyms</a></p>

@@ -29,7 +29,7 @@ if($connection){
 
 <body>
     <div class="nav">
-        <div class="nav-left">Gymnastix</div>
+        <div class="nav-left">Gymnasio</div>
         <div class="nav-right"><button class="nav-button"><a href="login.php"> Login </a></button></div>
     </div> 
     <br>

@@ -32,7 +32,7 @@ if($connection){
 </head>
 <body>
 <div class="nav">
-    <div class="nav-left">Gymnastix</div>
+    <div class="nav-left">Gymnasio</div>
     <div class="nav-right">
         <button class="nav-button"><a href="register.php">Register</a> </button> </div>
 </div> 

@@ -35,7 +35,7 @@ $history = mysqli_query($connection,$passquery);
     <div class="profile-container">
         <div class="home-nav">
             <label>
-                <a href="home.php">Gymnastix</a>
+                <a href="home.php">Gymnasio</a>
             </label>
             <p><a href="about.php">About us</a></p>
             <p><a href="search.php">View Gyms</a></p>

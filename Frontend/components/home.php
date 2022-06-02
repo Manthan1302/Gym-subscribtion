@@ -21,7 +21,7 @@ session_start();
             </div>
             <div class="start-gym-body">
                 <div class="start-gym-nav">
-                    <span class="name">Gymnastix</span>
+                    <span class="name">Gymnasio</span>
                     <span class="li"><a href="about.php">About us</a></span>
                     <span class="li"><a href="#membershipasses">Membership pass</a></span>
                     <span class="li"><a href="search.php">View Gyms</a></span>
@@ -58,8 +58,8 @@ session_start();
     <div class="how-works">
         <div class="how-works-container">
             <div class="how-works-title">
-                <label>How Company_Name Works </label>
-                <p>Company_name is a network of gyms, pools, spas and health and fitness apps. </p>
+                <label>How Gymnasio Works </label>
+                <p>Gymnasio is a network of gyms, pools, spas and health and fitness apps. </p>
                 <p>With one pass, you can access fitness in exactly the way you want.</p>
             </div>
             <div class="how-works-cards">

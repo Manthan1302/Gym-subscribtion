@@ -41,7 +41,7 @@ if($connection){
 <body>
     <div class="nav">
         <div class="nav-left">
-        <a href="home.php">Gymnastix</a>
+        <a href="home.php">Gymnasio</a>
         </div>
         <div class="nav-right">
             <p><a href="">About</a></p>

@@ -496,8 +496,9 @@ membership-passes
   text-decoration: none;
 }
 
-.membership .membership-container .membership-container-card .line6 button:hover > a{
-  color: white;
+.membership .membership-container .membership-container-card .line6 button:hover  a{
+  color: black;
+ 
 }
 
 .membership
