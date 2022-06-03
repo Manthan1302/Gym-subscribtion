@@ -723,3 +723,15 @@ font-family: "Quicksand", sans-serif;
 
 }
 
+.footer-left a:active{
+  color: #9DB3BB;
+  text-decoration: none;
+}
+.footer-left a:visited{
+  color: #9DB3BB;
+  text-decoration: none;
+}
+.footer-left a:link{
+  color: #9DB3BB;
+  text-decoration: none;
+}

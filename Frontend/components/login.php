@@ -101,7 +101,8 @@ if($connection){
                 echo '<script>';
                 echo "alert('password should be in numbers')";
                 echo '</script>';
-            }else{
+            }
+            else{
                 $search = "select * from user where email = '$email' and password = '$password' ";
                 $login = mysqli_query($connection , $search);
 

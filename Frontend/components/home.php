@@ -135,9 +135,11 @@ session_start();
                         <p>Just pay when you go</p>
                     </div>
                     <div class="line6">
+                        <a href="search.php">
                         <button>                            
-                            <a href="search.php">View Gyms</a>
+                            View Gyms
                         </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -176,9 +178,9 @@ session_start();
                         <p style="color: black;">for single Gym use</p>
                     </div>
                     <div class="line6">
-                        <button>                            
-                            <a href="search.php">View Gyms</a>
-                        </button>
+                    <a href="membershipass.php"><button>                            
+                            View Gyms
+                        </button></a>
                     </div>
                 </div>
             </div>
@@ -217,9 +219,9 @@ session_start();
                         <p>comes with extra features</p>
                     </div>
                     <div class="line6">
-                        <button>
-                            <a href="membershipass.php">View Gyms</a>
-                        </button>
+                    <a href="search.php"><button>
+                            View Gyms
+                        </button></a>
                     </div>
                 </div>
             </div>
@@ -231,19 +233,17 @@ session_start();
                 <img src="../images/aaron-brogden-miCR9VIQ5PE-unsplash.jpg" />
             </div>
             <div class="gym-body">
-                <h1>Gym Owner?</h1>
-                <p>List your club for FREE and benefit from Company_name <br> marketing, reaching millions of new
-                    customers</p>
-                <button>List your club today</button>
+                <h1>Are You Gym Owner?</h1>
+                <p>List your club for FREE and benefit from Gymnasio <br> marketing, reaching millions of new
+                    customers <br>If you want to join us than candly share your gyms detils thrugh mail(in Footer). </p>
+                
             </div>
         </div>
     </div>
     <div class="footer">
         <div class="footer-left">
-            <div>Gym passes</div>
-            <div>Gyms near me</div>
-            <div>Refer a friend</div>
-            <div>Student Discount</div>
+            <a href="membershipass.php"><div>Membership passes</div></a>
+            <a href="search.php"><div>Gyms </div></a>  
         </div>
         <div class="footer-center">
             <div>Partnerships</div>
@@ -251,10 +251,12 @@ session_start();
             <div>Careers</div>
         </div>
         <div class="footer-right">
-            <div>Blog</div>
+    
               <div>Terms</div>
             <div>Privacy Policy</div>
-            <div>FAQs & Contact</div>
+            <div>+91 8460391975</div>
+            <div>gymasiomail@gmail.com</div>
+
         </div>
 
     </div>
